@@ -1,0 +1,24 @@
+﻿<Properties StartupConfiguration="{F5A8D547-FD68-0FF9-8477-65FDD6FA17A4}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/ViewManager.cs">
+    <Files>
+      <File FileName="Assets/ViewManager.cs" Line="29" Column="13" />
+      <File FileName="Library/PackageCache/com.unity.render-pipelines.universal@12.1.7/Runtime/2D/Light2D.cs" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="careers" expanded="True">
+            <Node name="Assets" expanded="True" selected="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="e9f90423-5a38-4bb5-aadb-9baf5cf398e0" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
