@@ -23,11 +23,11 @@ public class ViewManager : MonoBehaviour, IEventSystemHandler
     {
         if(rotate && _camera.m_Lens.Dutch < 90)
         {
-            _camera.m_Lens.Dutch = Mathf.Lerp(_camera.m_Lens.Dutch, 90, Time.deltaTime);
+            _camera.m_Lens.Dutch = Mathf.Lerp(_camera.m_Lens.Dutch, -90, Time.deltaTime);
         }
         else
         {
-            Debug.Log("done");
+            
         }
     }
 

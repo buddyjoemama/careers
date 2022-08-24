@@ -441,7 +441,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 849558269}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.5, y: -5.8, z: -1}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -618,7 +618,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1416002162}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.5, y: -5.8, z: -1}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -749,10 +749,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 80, y: -65}
-      - {x: 80, y: 65}
-      - {x: -80, y: 65}
-      - {x: -80, y: -65}
+    - - {x: 90, y: -80}
+      - {x: 90, y: 80}
+      - {x: -90, y: 80}
+      - {x: -90, y: -80}
 --- !u!1 &1633094180
 GameObject:
   m_ObjectHideFlags: 0
@@ -1134,11 +1134,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1890142013599234811, guid: e923b0bf225684eb5a7d0f23a1ec51f3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1890142013599234811, guid: e923b0bf225684eb5a7d0f23a1ec51f3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1890142013599234811, guid: e923b0bf225684eb5a7d0f23a1ec51f3, type: 3}
       propertyPath: m_LocalPosition.z
