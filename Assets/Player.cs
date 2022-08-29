@@ -5,6 +5,8 @@ using System.Linq;
 
 public class Player : MonoBehaviour
 {
+    public GameBoardSquare CurrentGameBoardSquare;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,19 +16,20 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        var t = Physics2D.BoxCastAll(this.transform.position, 
+        // Find the squares we are on...could potentially be on > 1
+        var foundSquare = Physics2D.BoxCastAll(this.transform.position,
             new Vector2(this.transform.localScale.x, this.transform.localScale.y),
             0,
-            transform.forward);
+            transform.forward)
+            .First()
+            .collider
+            .gameObject
+            .GetComponent<GameBoardSquare>();
 
-        if(t.Length > 0)
+        if(!CurrentGameBoardSquare.CompareTag(foundSquare.tag))
         {
-            var s = t[0].collider.gameObject.GetComponentInChildren<GameBoardSquare>();
-
-            if(s != null)
-            {
-
-            }
+            CurrentGameBoardSquare = foundSquare;
+            Debug.Log("Updated to " + foundSquare.tag);
         }
     }
 }

@@ -5,6 +5,8 @@ using System.Linq;
 
 public class GameBoardSquare : MonoBehaviour
 {
+    public int PositionIndex = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -15,25 +17,5 @@ public class GameBoardSquare : MonoBehaviour
     void Update()
     {
 
-    }
-
-    void OnTriggerEnter2D(Collider2D collision)
-    {
-        Debug.Log("Enter");
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        Debug.Log("something");
-    }
-
-    private void OnCollisionStay(Collision collision)
-    {
-        Debug.Log("something");
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        Debug.Log("something");
     }
 }

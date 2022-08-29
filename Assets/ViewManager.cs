@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using Cinemachine;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class ViewManager : MonoBehaviour, IEventSystemHandler
 {
     private CinemachineVirtualCamera _camera;
+    public int Scale = 30;
+    public Slider slider;
 
     // Start is called before the first frame update
     void Start()
@@ -27,8 +30,10 @@ public class ViewManager : MonoBehaviour, IEventSystemHandler
         }
         else
         {
-            
+           
         }
+
+        _camera.m_Lens.OrthographicSize = slider.value;
     }
 
     void OnSubmit(BaseEventData eventData)
@@ -36,7 +41,7 @@ public class ViewManager : MonoBehaviour, IEventSystemHandler
 
     }
 
-    public void OnClick()
+    public void OnClick(int val)
     {
         rotate = true;
     }
