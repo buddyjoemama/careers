@@ -16,20 +16,26 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Find the squares we are on...could potentially be on > 1
-        var foundSquare = Physics2D.BoxCastAll(this.transform.position,
-            new Vector2(this.transform.localScale.x, this.transform.localScale.y),
-            0,
-            transform.forward)
-            .First()
-            .collider
-            .gameObject
-            .GetComponent<GameBoardSquare>();
+        //// Find the squares we are on...could potentially be on > 1
+        //var foundSquares = Physics2D.BoxCastAll(this.transform.position,
+        //    new Vector2(this.transform.localScale.x, this.transform.localScale.y),
+        //    0,
+        //    transform.forward);
 
-        if(!CurrentGameBoardSquare.CompareTag(foundSquare.tag))
-        {
-            CurrentGameBoardSquare = foundSquare;
-            Debug.Log("Updated to " + foundSquare.tag);
-        }
+        //foreach(var square in foundSquares)
+        //{
+        //    square.collider.gameObject.GetComponent<IGameSquare>().Activate();
+        //}
+
+        //    //.Single()
+        //    //.collider
+        //    //.gameObject
+        //    //.GetComponent<IGamerSquare>();
+
+        ////if(!CurrentGameBoardSquare.CompareTag(foundSquare.tag))
+        ////{
+        ////    CurrentGameBoardSquare = foundSquare;
+        ////    Debug.Log("Updated to " + foundSquare.tag);
+        ////}
     }
 }

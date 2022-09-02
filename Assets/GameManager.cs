@@ -12,15 +12,15 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        var square = GetComponentsInChildren<GameBoardSquare>()
-            .Where(s => s.PositionIndex == 1)
-            .First();
+        //var square = GetComponentsInChildren<GameBoardSquare>()
+        //    .Where(s => s.PositionIndex == 1)
+        //    .First();
 
-        Player p = GetComponentInChildren<Player>();
-        p.CurrentGameBoardSquare = square;
-        p.gameObject.transform.position = square.transform.position;
+        //Player p = GetComponentInChildren<Player>();
+        //p.CurrentGameBoardSquare = square;
+        //p.gameObject.transform.position = square.transform.position;
 
-        _players.Add(p);
+        //_players.Add(p);
     }
 
     public float maxMoveSpeed = 10;
