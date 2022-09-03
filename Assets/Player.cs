@@ -2,15 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using System;
 
 public class Player : MonoBehaviour
 {
-    public GameBoardSquare CurrentGameBoardSquare;
+    public Guid PlayerId { get; private set; }
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        PlayerId = Guid.NewGuid();
     }
 
     // Update is called once per frame

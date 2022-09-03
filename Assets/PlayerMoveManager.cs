@@ -16,7 +16,13 @@ public class PlayerMoveManager : MonoBehaviour
         Assert.IsNotNull(_player);
 
         _hotspots = GameObject.FindGameObjectsWithTag("Hotspot")
-            .Select(s => s.gameObject.GetComponent<Hotspot>())
+            .Select((s, i) =>
+            {
+                var hotspot = s.gameObject.GetComponent<Hotspot>();
+                hotspot.PositionIndex = i;
+
+                return hotspot;
+            })
             .ToList();
 
         Assert.IsNotNull(_hotspots);
@@ -26,13 +32,17 @@ public class PlayerMoveManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        return;
         var target = _hotspots[index].transform.position;
 
         _player.transform.position =
             Vector2.MoveTowards(_player.transform.position, target, 1 * Time.deltaTime);
 
-        if(_hotspots[index].IsOccupied)
+        if (_hotspots[index].PlayerOnOccupation())
+        {
+            Debug.Log("Player on occupation: " + _hotspots[index].Occupation.Name);
+        }
+
+        if (_hotspots[index].IsOccupied)
         {
             _hotspots[index].SetOccupied(false);
             index += 1;

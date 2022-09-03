@@ -8,6 +8,8 @@ public class Hotspot : MonoBehaviour
     // Start is called before the first frame update
     public Player Player { get; private set; }
     public bool IsOccupied { get; private set; }
+    public int PositionIndex { get; set; }
+    public Occupation Occupation => this.GetComponentInParent<Occupation>();
 
     void Start()
     {
@@ -38,5 +40,10 @@ public class Hotspot : MonoBehaviour
     internal void SetOccupied(bool value)
     {
         IsOccupied = value;
+    }
+
+    public bool PlayerOnOccupation()
+    {
+        return this.GetComponentInParent<Occupation>() != null;
     }
 }
