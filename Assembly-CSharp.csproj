@@ -56,14 +56,14 @@
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Occupation.cs" />
     <Compile Include="Assets\PlayerMoveManager.cs" />
     <Compile Include="Assets\GameSquareCameraGroupAdjuster.cs" />
     <Compile Include="Assets\GameManager.cs" />
     <Compile Include="Assets\Hotspot.cs" />
+    <Compile Include="Assets\OccupationSquare.cs" />
     <Compile Include="Assets\ViewManager.cs" />
     <Compile Include="Assets\Player.cs" />
-    <Compile Include="Assets\OccupationSquare.cs" />
-    <Compile Include="Assets\Occupation.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

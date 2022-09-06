@@ -1,50 +1,42 @@
 using System.Collections;
 using System.Collections.Generic;
 using Cinemachine;
+using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using System.Linq;
 
 public class ViewManager : MonoBehaviour, IEventSystemHandler
 {
+    public Slider slider;    
+    public Player Player;
+    public float ZoomOutBoardRadius;
+    public Transform Board;
+
     private CinemachineVirtualCamera _camera;
-    public int Scale = 30;
-    public Slider slider;
+    private CinemachineTargetGroup _cinemachineTargetGroup;
+    private List<GameSquareCameraGroupAdjuster> _adjusterList;
+
+    private float m_oldBoardRadius = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-        _camera = GetComponentInChildren<CinemachineVirtualCamera>();
-        
+        _camera = GetComponentInChildren<CinemachineVirtualCamera>();        
+        _cinemachineTargetGroup = GetComponentInChildren<CinemachineTargetGroup>();
+        _adjusterList = GetComponentsInChildren<GameSquareCameraGroupAdjuster>().ToList();
     }
 
-    public float maxMoveSpeed = 10;
-    public float smoothTime = 0.3f;
-    Vector2 currentVelocity;
-    // Update is called once per frame
-    void Update()
+    public void ZoomToCenter()
     {
-        if(rotate && _camera.m_Lens.Dutch < 90)
-        {
-            _camera.m_Lens.Dutch = Mathf.Lerp(_camera.m_Lens.Dutch, -90, Time.deltaTime);
-        }
-        else
-        {
-           
-        }
+        _adjusterList.ForEach(s => s.enabled = false);
 
-        _camera.m_Lens.OrthographicSize = slider.value;
+        m_oldBoardRadius = _cinemachineTargetGroup.m_Targets[_cinemachineTargetGroup.FindMember(Board)].radius;
+
+        _cinemachineTargetGroup.m_Targets[_cinemachineTargetGroup.FindMember(Board)].weight = 1;
+        _cinemachineTargetGroup.m_Targets[_cinemachineTargetGroup.FindMember(Board)].radius = ZoomOutBoardRadius;
+
+        _cinemachineTargetGroup.m_Targets[_cinemachineTargetGroup.FindMember(Player.transform)].weight = 0;
     }
-
-    void OnSubmit(BaseEventData eventData)
-    {
-
-    }
-
-    public void OnClick(int val)
-    {
-        rotate = true;
-    }
-
-    bool rotate = false;
 }
