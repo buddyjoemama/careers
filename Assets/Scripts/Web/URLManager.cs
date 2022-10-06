@@ -30,16 +30,3 @@ public class URLManager : MonoBehaviour
         return URLList.Single(s => s.StartsWith(key)).Split(new char[] { '=' }).Last();
     }
 }
-
-public static class StringHelpers
-{
-    public static string ReplaceToken(this string sourceString, params KeyValuePair<string, string>[] obj)
-    {
-        foreach (var token in obj)
-        {
-            sourceString = sourceString.Replace("{" + token.Key + "}", token.Value);
-        }
-
-        return sourceString;
-    }
-}

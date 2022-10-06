@@ -12,7 +12,7 @@ public class CareersUIManager : MonoBehaviour
 
     void Start()
     {
-        Time.timeScale = 0;
+       // Time.timeScale = 0;
     }
 
     // Update is called once per frame
