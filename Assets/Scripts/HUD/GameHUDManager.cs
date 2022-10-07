@@ -9,7 +9,7 @@ public class GameHUDManager : MonoBehaviour
     void Start()
     {
         _createGamePanel = GetComponentInChildren<CreateGamePanel>();
-        _createGamePanel.gameObject.SetActive(false);
+        _createGamePanel.gameObject.SetActive(true);
     }
 
     // Update is called once per frame

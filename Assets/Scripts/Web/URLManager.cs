@@ -10,7 +10,7 @@ public class URLManager : MonoBehaviour
     public string ServerUrl;
     public List<string> URLList = new List<string>();
 
-    internal string CreateGame(string installationId, int points)
+    internal string CreateGame(string installationId, string points)
     {
         string paramOne = nameof(installationId);
         string paramTwo = nameof(points);
@@ -19,7 +19,7 @@ public class URLManager : MonoBehaviour
             .ReplaceToken(new[]
             {
                 new KeyValuePair<string, string>(paramOne, installationId),
-                new KeyValuePair<string, string>(paramTwo, points.ToString())
+                new KeyValuePair<string, string>(paramTwo, points)
             });
 
         return $"{ServerUrl}{url}";

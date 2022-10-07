@@ -23,7 +23,7 @@ public class CareersUIManager : MonoBehaviour
 
     public void CreateGame()
     {
-        StartCoroutine(PerformPostRequest(URLManager.CreateGame("abc123", 200), "", (s) =>
+        StartCoroutine(PerformPostRequest(URLManager.CreateGame("abc123", ""), "", (s) =>
         {
             string gameId = Regex.Match(s, "^\"(?<id>.*)\"$").Groups["id"].Value;
         }));
