@@ -9,6 +9,12 @@ public class EventManager : MonoBehaviour
     public event GameAsyncOperation OnAsyncOperationBegin;
     public event GameAsyncOperation OnAsyncOperationEnd;
 
+    public delegate void GamePause();
+    public event GamePause OnPause;
+    public event GamePause OnResume;
+
+    private bool _isPaused = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,19 +24,24 @@ public class EventManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(Input.GetKeyUp(KeyCode.Escape))
+        {
+            _isPaused = !_isPaused;
+
+            if(_isPaused)
+                OnPause();
+            else
+                OnResume();
+        }
     }
 
-    public void PerformAsyncOperation(Action action)
+    public void BeginAsyncOperation()
     {
-        try
-        {
-            OnAsyncOperationBegin();
-            action();
-        }
-        finally
-        {
-            OnAsyncOperationEnd();
-        }
+        OnAsyncOperationBegin();
+    }
+
+    public void EndAsyncOperation()
+    {
+        OnAsyncOperationEnd();
     }
 }

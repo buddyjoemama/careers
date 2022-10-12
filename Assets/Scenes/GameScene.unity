@@ -2393,6 +2393,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 199464966}
+  - component: {fileID: 199464967}
   m_Layer: 0
   m_Name: UI
   m_TagString: Untagged
@@ -2416,6 +2417,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &199464967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 199464965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14f21699aacec114093dec935cd082e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EventManager: {fileID: 983239173}
 --- !u!4 &210155559 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5929984153316553160, guid: 9be025ee41f925b4896dc186c409d10c, type: 3}
@@ -14727,17 +14741,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
---- !u!114 &1589694491 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4688086285981426468, guid: e923b0bf225684eb5a7d0f23a1ec51f3, type: 3}
-  m_PrefabInstance: {fileID: 1238620809}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1589694487}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6cf9a6cfd02d24292a1280925fec3b2d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1598296899
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18881,7 +18884,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1994622397}
-  - component: {fileID: 1994622396}
   - component: {fileID: 1994622398}
   - component: {fileID: 1994622399}
   m_Layer: 0
@@ -18891,22 +18893,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1994622396
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1994622395}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dee91fc1680bd4f8792f6e98de2f9fd0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slider: {fileID: 0}
-  Player: {fileID: 1589694491}
-  ZoomOutBoardRadius: 2.3
-  Board: {fileID: 1644457366}
 --- !u!4 &1994622397
 Transform:
   m_ObjectHideFlags: 0

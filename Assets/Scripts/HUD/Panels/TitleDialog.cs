@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class TitleDialog : MonoBehaviour
@@ -9,7 +7,7 @@ public class TitleDialog : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -20,11 +18,12 @@ public class TitleDialog : MonoBehaviour
 
     public void CreateGame_Click()
     {
-        CreateGameDialog.gameObject.SetActive(true);
+        CreateGameDialog.gameObject.SetActive(true);       
     }
 
     public void ResumeGame_Click() 
-    { 
+    {
+ 
     }
 
     public void JoinGame_Click()

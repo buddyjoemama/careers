@@ -7,7 +7,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using System.Linq;
 
-public class ViewManager : MonoBehaviour, IEventSystemHandler
+public class GameViewManager : MonoBehaviour, IEventSystemHandler
 {
     public Slider slider;    
     public Player Player;

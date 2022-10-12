@@ -7,11 +7,15 @@ using System.Linq;
 public class GameManager : MonoBehaviour
 {
     public Player Player;
+    public EventManager EventManager;
+
     private List<Player> _players = new List<Player>();
 
     // Start is called before the first frame update
     void Start()
     {
+        EventManager.OnPause += EventManager_OnPause;
+        EventManager.OnResume += EventManager_OnResume;
         //Time.timeScale = 0;
         //var square = GetComponentsInChildren<GameBoardSquare>()
         //    .Where(s => s.PositionIndex == 1)
@@ -22,6 +26,16 @@ public class GameManager : MonoBehaviour
         //p.gameObject.transform.position = square.transform.position;
 
         //_players.Add(p);
+    }
+
+    private void EventManager_OnResume()
+    {
+        Time.timeScale = 1;
+    }
+
+    private void EventManager_OnPause()
+    {
+        Time.timeScale = 0;
     }
 
 

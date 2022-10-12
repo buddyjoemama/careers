@@ -64,9 +64,9 @@
     <Compile Include="Assets\Scripts\HUD\UIComponents\GameInfoComponent.cs" />
     <Compile Include="Assets\Scripts\Managers\CareersUIManager.cs" />
     <Compile Include="Assets\Scripts\Managers\EventManager.cs" />
+    <Compile Include="Assets\Scripts\Managers\GameHUDManager.cs" />
     <Compile Include="Assets\Scripts\Managers\GameManager.cs" />
     <Compile Include="Assets\Scripts\Managers\PlayerMoveManager.cs" />
-    <Compile Include="Assets\Scripts\Managers\ViewManager.cs" />
     <Compile Include="Assets\Scripts\Occupation.cs" />
     <Compile Include="Assets\Scripts\GameSquareCameraGroupAdjuster.cs" />
     <Compile Include="Assets\Scripts\Web\URLManager.cs" />
@@ -77,11 +77,6 @@
     <Compile Include="Assets\Scripts\Helpers\StringHelpers.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\Scripts\Managers\CareersUIManager.cs.meta" />
-    <None Include="Assets\Scripts\Managers\EventManager.cs.meta" />
-    <None Include="Assets\Scripts\Managers\GameManager.cs.meta" />
-    <None Include="Assets\Scripts\Managers\PlayerMoveManager.cs.meta" />
-    <None Include="Assets\Scripts\Managers\ViewManager.cs.meta" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />

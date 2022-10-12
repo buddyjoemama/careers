@@ -10,17 +10,11 @@ public class ProcessingDialog : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //_processingImage = GetComponentInChildren<Image>();
-        //CareersAsyncEvent.AddListener(s =>
-        //{
-        //    this.gameObject.SetActive(s);
-        //});  
+
     }
 
-    float angle = 0;
     void Update()
     {
-        ProcessingImage.transform.Rotate(0, 0, angle);
-        angle -= (Time.deltaTime * 200) % 360;
+        ProcessingImage.transform.Rotate(0, 0, -2);
     }
 }

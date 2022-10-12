@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CreateGameDialog : MonoBehaviour
 {
+    public EventManager EventManager;
+
     // Start is called before the first frame update
     void Start()
     {
