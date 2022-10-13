@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 
-public class CreateGameResponse
+public class GameInfo
 {
     [JsonProperty("_id")]
     public string Id { get; set; }

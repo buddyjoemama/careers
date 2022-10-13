@@ -19,6 +19,12 @@ public class GameHUDManager : MonoBehaviour
         EventManager.OnAsyncOperationEnd += EventManager_OnAsyncOperationEnd;
         EventManager.OnPause += EventManager_OnPause;
         EventManager.OnResume += EventManager_OnResume;
+        EventManager.OnOpenGame += EventManager_OnOpenGame;
+    }
+
+    private void EventManager_OnOpenGame(GameInfo gameInfo)
+    {
+        this.gameObject.SetActive(false);
     }
 
     private void EventManager_OnResume()
@@ -31,14 +37,16 @@ public class GameHUDManager : MonoBehaviour
         
     }
 
-    private void EventManager_OnAsyncOperationEnd()
+    private void EventManager_OnAsyncOperationEnd(string message)
     {
         _processingDialog.gameObject.SetActive(false);
+        _processingDialog.Text = message;
     }
 
-    private void EventManager_OnAsyncOperationBegin()
+    private void EventManager_OnAsyncOperationBegin(string message)
     {
         _processingDialog.gameObject.SetActive(true);
+        _processingDialog.Text = message;
     }
 
     // Update is called once per frame

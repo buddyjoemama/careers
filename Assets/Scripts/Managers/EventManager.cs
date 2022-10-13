@@ -5,9 +5,12 @@ using UnityEngine;
 
 public class EventManager : MonoBehaviour
 {
-    public delegate void GameAsyncOperation();
+    public delegate void GameAsyncOperation(string message);
     public event GameAsyncOperation OnAsyncOperationBegin;
     public event GameAsyncOperation OnAsyncOperationEnd;
+
+    public delegate void OpenGameOperation(GameInfo gameInfo);
+    public event OpenGameOperation OnOpenGame;
 
     public delegate void GamePause();
     public event GamePause OnPause;
@@ -35,13 +38,19 @@ public class EventManager : MonoBehaviour
         }
     }
 
-    public void BeginAsyncOperation()
+    public void BeginAsyncOperation(string message = null)
     {
-        OnAsyncOperationBegin();
+        OnAsyncOperationBegin(message);
     }
 
-    public void EndAsyncOperation()
+    public void EndAsyncOperation(string message = null)
     {
-        OnAsyncOperationEnd();
+        OnAsyncOperationEnd(message);
+    }
+
+    public void OpenGame(GameInfo gameInfo)
+    {
+        if(OnOpenGame != null)
+           OnOpenGame(gameInfo);
     }
 }

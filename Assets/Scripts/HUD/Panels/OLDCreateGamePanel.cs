@@ -42,7 +42,7 @@ public class OLDCreateGamePanel : MonoBehaviour
 
             if(request.result == UnityWebRequest.Result.Success)
             {
-                var response = JsonConvert.DeserializeObject<CreateGameResponse>(request.downloadHandler.text);
+                var response = JsonConvert.DeserializeObject<GameInfo>(request.downloadHandler.text);
                 
                 var info = Instantiate(GameInfoPrefab, _scrollGames.transform);
                 info.Points = response.Points;
