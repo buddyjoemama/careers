@@ -10,6 +10,7 @@ public class CreateGameDialog : MonoBehaviour
     public EventManager EventManager;
     public URLManager URLManager;
     public TMP_InputField PointsTextBox;
+    public SimpleErrorDialog SimpleErrorDialog;
 
     // Start is called before the first frame update
     void Start()
@@ -36,8 +37,17 @@ public class CreateGameDialog : MonoBehaviour
 
     private IEnumerator CreateGameAsync()
     {
-        using (UnityWebRequest request = UnityWebRequest.Post(URLManager.CreateGame("test123", PointsTextBox.text), ""))
+        var s = JsonConvert.SerializeObject(new
         {
+            name = "test"
+        });
+
+        using (UnityWebRequest request = 
+            UnityWebRequest.Put(URLManager.CreateGame(PlayerPreferences.EmailAddress, PointsTextBox.text), s))
+        {
+            request.SetRequestHeader("Content-Type", "application/json");
+            request.SetRequestHeader("Accept", "application/json");
+
             yield return request.SendWebRequest();
 
             if (request.result == UnityWebRequest.Result.Success)
@@ -49,7 +59,9 @@ public class CreateGameDialog : MonoBehaviour
             }
             else
             {
-
+                EventManager.EndAsyncOperation();
+                SimpleErrorDialog.ErrorMessage = "Error creating game. Please try again.";
+                SimpleErrorDialog.gameObject.SetActive(true);
             }
         }
     }

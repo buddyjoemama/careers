@@ -61,6 +61,7 @@
     <Compile Include="Assets\Scripts\HUD\Panels\ProcessingDialog.cs" />
     <Compile Include="Assets\Scripts\HUD\Panels\CreateGameDialog.cs" />
     <Compile Include="Assets\Models\CreateGameResponse.cs" />
+    <Compile Include="Assets\Scripts\HUD\Panels\SimpleErrorDialog.cs" />
     <Compile Include="Assets\Scripts\HUD\Panels\TitleDialog.cs" />
     <Compile Include="Assets\Scripts\HUD\UIComponents\GameInfoComponent.cs" />
     <Compile Include="Assets\Scripts\Managers\CareersUIManager.cs" />
@@ -70,6 +71,7 @@
     <Compile Include="Assets\Scripts\Managers\PlayerMoveManager.cs" />
     <Compile Include="Assets\Scripts\Occupation.cs" />
     <Compile Include="Assets\Scripts\GameSquareCameraGroupAdjuster.cs" />
+    <Compile Include="Assets\Scripts\PlayerPreferences.cs" />
     <Compile Include="Assets\Scripts\Web\URLManager.cs" />
     <Compile Include="Assets\Scripts\Hotspot.cs" />
     <Compile Include="Assets\Scripts\OccupationSquare.cs" />

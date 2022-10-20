@@ -14,9 +14,11 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        PlayerPreferences.EmailAddress = "brian.bacon01@gmail.com";
+
         EventManager.OnPause += EventManager_OnPause;
         EventManager.OnResume += EventManager_OnResume;
-       // Time.timeScale = 0;
+        Time.timeScale = 0;
         //var square = GetComponentsInChildren<GameBoardSquare>()
         //    .Where(s => s.PositionIndex == 1)
         //    .First();
