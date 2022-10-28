@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
 
         EventManager.OnPause += EventManager_OnPause;
         EventManager.OnResume += EventManager_OnResume;
-        Time.timeScale = 0;
+        //Time.timeScale = 0;
         //var square = GetComponentsInChildren<GameBoardSquare>()
         //    .Where(s => s.PositionIndex == 1)
         //    .First();

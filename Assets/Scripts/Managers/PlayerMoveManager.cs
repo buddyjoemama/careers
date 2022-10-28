@@ -32,7 +32,7 @@ public class PlayerMoveManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       // return;
+        return;
         var target = _hotspots[index].transform.position;
 
         _player.transform.position =
