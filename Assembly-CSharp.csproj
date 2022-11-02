@@ -65,6 +65,7 @@
     <Compile Include="Assets\Scripts\HUD\Panels\SimpleErrorDialog.cs" />
     <Compile Include="Assets\Scripts\HUD\Panels\TitleDialog.cs" />
     <Compile Include="Assets\Scripts\HUD\UIComponents\GameInfoComponent.cs" />
+    <Compile Include="Assets\Scripts\HUD\UIComponents\PlayerInfo.cs" />
     <Compile Include="Assets\Scripts\Managers\CareersUIManager.cs" />
     <Compile Include="Assets\Scripts\Managers\EventManager.cs" />
     <Compile Include="Assets\Scripts\Managers\GameHUDManager.cs" />
