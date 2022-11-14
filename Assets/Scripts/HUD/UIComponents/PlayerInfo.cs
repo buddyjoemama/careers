@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using TMPro;
 using UnityEngine;
 
@@ -16,6 +18,7 @@ public class PlayerInfo : MonoBehaviour
     private TMP_Text _playerName;
     private TMP_Text _stars;
     private TMP_Text _money;
+
     private TMP_Text _hearts;
 
     // Start is called before the first frame update

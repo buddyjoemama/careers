@@ -30,4 +30,16 @@ public static class PlayerPreferences
             PlayerPrefs.SetString("name", value);
         }
     }
+
+    public static String PlayerId
+    {
+        get
+        {
+            return PlayerPrefs.GetString("player_id");
+        }
+        set
+        {
+            PlayerPrefs.SetString("player_id", value);
+        }
+    }
 }

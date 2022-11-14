@@ -43,7 +43,7 @@ public class CreateGameDialog : MonoBehaviour
         });
 
         using (UnityWebRequest request = 
-            UnityWebRequest.Put(URLManager.CreateGame(PlayerPreferences.EmailAddress, PointsTextBox.text), s))
+            UnityWebRequest.Put(URLManager.CreateGame(PlayerPreferences.PlayerId, PointsTextBox.text), ""))
         {
             request.SetRequestHeader("Content-Type", "application/json");
             request.SetRequestHeader("Accept", "application/json");

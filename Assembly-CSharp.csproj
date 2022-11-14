@@ -59,6 +59,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Helpers\RotateBoard.cs" />
     <Compile Include="Assets\Scripts\HUD\MainGamePanel.cs" />
+    <Compile Include="Assets\Scripts\HUD\Panels\FormulaDialog.cs" />
     <Compile Include="Assets\Scripts\HUD\Panels\ProcessingDialog.cs" />
     <Compile Include="Assets\Scripts\HUD\Panels\CreateGameDialog.cs" />
     <Compile Include="Assets\Models\CreateGameResponse.cs" />
@@ -66,11 +67,12 @@
     <Compile Include="Assets\Scripts\HUD\Panels\TitleDialog.cs" />
     <Compile Include="Assets\Scripts\HUD\UIComponents\GameInfoComponent.cs" />
     <Compile Include="Assets\Scripts\HUD\UIComponents\PlayerInfo.cs" />
-    <Compile Include="Assets\Scripts\Managers\CareersUIManager.cs" />
     <Compile Include="Assets\Scripts\Managers\EventManager.cs" />
     <Compile Include="Assets\Scripts\Managers\GameHUDManager.cs" />
     <Compile Include="Assets\Scripts\Managers\GameManager.cs" />
     <Compile Include="Assets\Scripts\Managers\PlayerMoveManager.cs" />
+    <Compile Include="Assets\Scripts\Managers\PlayersPanelManager.cs" />
+    <Compile Include="Assets\Scripts\Managers\RollManager.cs" />
     <Compile Include="Assets\Scripts\Occupation.cs" />
     <Compile Include="Assets\Scripts\GameSquareCameraGroupAdjuster.cs" />
     <Compile Include="Assets\Scripts\PlayerPreferences.cs" />
@@ -78,7 +80,6 @@
     <Compile Include="Assets\Scripts\Hotspot.cs" />
     <Compile Include="Assets\Scripts\OccupationSquare.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
-    <Compile Include="Assets\Scripts\HUD\Panels\OLDCreateGamePanel.cs" />
     <Compile Include="Assets\Scripts\Helpers\StringHelpers.cs" />
   </ItemGroup>
   <ItemGroup>
