@@ -6,12 +6,30 @@ using System;
 
 public class Player : MonoBehaviour
 {
-    public Guid PlayerId { get; private set; }
+    public Formula Formula { get; private set; } = new Formula();
+
+    internal void SetFormula(string hearts, string stars, string money)
+    {
+        if(int.TryParse(hearts, out int h))
+        {
+            Formula.Hearts = h;
+        }
+
+        if(int.TryParse(stars, out int s))
+        {
+            Formula.Stars = s;
+        }
+
+        if(int.TryParse(money, out int m))
+        {
+            Formula.Money = m;
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
     {
-        PlayerId = Guid.NewGuid();
+        
     }
 
     // Update is called once per frame

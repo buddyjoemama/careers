@@ -49,17 +49,17 @@ public class CreateGameDialog : MonoBehaviour
             request.SetRequestHeader("Accept", "application/json");
 
             yield return request.SendWebRequest();
+            
+            EventManager.EndAsyncOperation();
 
             if (request.result == UnityWebRequest.Result.Success)
             {
                 var response = JsonConvert.DeserializeObject<GameInfo>(request.downloadHandler.text);
-                EventManager.OpenGame(response);
-                EventManager.BeginAsyncOperation("Opening game...");
+                EventManager.CreateGame(response);
                 this.gameObject.SetActive(false);
             }
             else
             {
-                EventManager.EndAsyncOperation();
                 SimpleErrorDialog.ErrorMessage = "Error creating game. Please try again.";
                 SimpleErrorDialog.gameObject.SetActive(true);
             }

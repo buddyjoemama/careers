@@ -5,12 +5,14 @@ using UnityEngine;
 
 public class EventManager : MonoBehaviour
 {
-    public delegate void GameAsyncOperation(string message);
-    public event GameAsyncOperation OnAsyncOperationBegin;
-    public event GameAsyncOperation OnAsyncOperationEnd;
+    public delegate void BeginGameAsyncOperation(string message);
+    public delegate void EndGameAsyncOperation();
 
-    public delegate void OpenGameOperation(GameInfo gameInfo);
-    public event OpenGameOperation OnOpenGame;
+    public event BeginGameAsyncOperation OnAsyncOperationBegin;
+    public event EndGameAsyncOperation OnAsyncOperationEnd;
+
+    public delegate void CreateGameOperation(GameInfo gameInfo);
+    public event CreateGameOperation OnCreateGame;
 
     public delegate void GamePause();
     public event GamePause OnPause;
@@ -43,14 +45,14 @@ public class EventManager : MonoBehaviour
         OnAsyncOperationBegin(message);
     }
 
-    public void EndAsyncOperation(string message = null)
+    public void EndAsyncOperation()
     {
-        OnAsyncOperationEnd(message);
+        OnAsyncOperationEnd();
     }
 
-    public void OpenGame(GameInfo gameInfo)
+    public void CreateGame(GameInfo gameInfo)
     {
-        if(OnOpenGame != null)
-           OnOpenGame(gameInfo);
+        if(OnCreateGame != null)
+           OnCreateGame(gameInfo);
     }
 }
