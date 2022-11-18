@@ -6,6 +6,7 @@ public class RollPanel : MonoBehaviour
 {
     public EventManager EventManager;
     public FormulaDialog FormulaDialog;
+    public GameManager GameManager;
 
     // Start is called before the first frame update
     void Start()
