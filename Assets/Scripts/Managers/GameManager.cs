@@ -10,14 +10,17 @@ public class GameManager : MonoBehaviour
     public EventManager EventManager;
 
     private List<Player> _players = new List<Player>();
+    public GameInfo CurrentGame { get; private set; }
 
     // Start is called before the first frame update
     void Start()
     {
         PlayerPreferences.EmailAddress = "brian.bacon01@gmail.com";
+        PlayerPreferences.PlayerId = "827a7e93-76af-4171-a605-bc3b10ec2a2e";
 
         EventManager.OnPause += EventManager_OnPause;
         EventManager.OnResume += EventManager_OnResume;
+        EventManager.OnCreateGame += EventManager_OnCreateGame;
         //Time.timeScale = 0;
         //var square = GetComponentsInChildren<GameBoardSquare>()
         //    .Where(s => s.PositionIndex == 1)
@@ -28,6 +31,11 @@ public class GameManager : MonoBehaviour
         //p.gameObject.transform.position = square.transform.position;
 
         //_players.Add(p);
+    }
+
+    private void EventManager_OnCreateGame(GameInfo gameInfo)
+    {
+        this.CurrentGame = gameInfo;
     }
 
     private void EventManager_OnResume()

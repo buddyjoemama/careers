@@ -43,23 +43,23 @@ public class CreateGameDialog : MonoBehaviour
         });
 
         using (UnityWebRequest request = 
-            UnityWebRequest.Put(URLManager.CreateGame(PlayerPreferences.EmailAddress, PointsTextBox.text), s))
+            UnityWebRequest.Put(URLManager.CreateGame(PlayerPreferences.PlayerId, PointsTextBox.text), ""))
         {
             request.SetRequestHeader("Content-Type", "application/json");
             request.SetRequestHeader("Accept", "application/json");
 
             yield return request.SendWebRequest();
+            
+            EventManager.EndAsyncOperation();
 
             if (request.result == UnityWebRequest.Result.Success)
             {
                 var response = JsonConvert.DeserializeObject<GameInfo>(request.downloadHandler.text);
-                EventManager.OpenGame(response);
-                EventManager.BeginAsyncOperation("Opening game...");
+                EventManager.CreateGame(response);
                 this.gameObject.SetActive(false);
             }
             else
             {
-                EventManager.EndAsyncOperation();
                 SimpleErrorDialog.ErrorMessage = "Error creating game. Please try again.";
                 SimpleErrorDialog.gameObject.SetActive(true);
             }
