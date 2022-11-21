@@ -7,6 +7,7 @@ public class GameHUDManager : MonoBehaviour
     public EventManager EventManager;
     public MainGamePanel MainGamePanel;
     public ProcessingDialog ProcessingDialog;
+    public TitleDialog TitleDialog;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +22,7 @@ public class GameHUDManager : MonoBehaviour
     private void EventManager_OnOpenGame(GameInfo gameInfo)
     {
         MainGamePanel.gameObject.SetActive(true);
+        TitleDialog.gameObject.SetActive(false);
     }
 
     private void EventManager_OnResume()
@@ -35,13 +37,13 @@ public class GameHUDManager : MonoBehaviour
 
     private void EventManager_OnAsyncOperationEnd()
     {
-        ProcessingDialog.gameObject.SetActive(false);
+        //ProcessingDialog.gameObject.SetActive(false);
     }
 
     private void EventManager_OnAsyncOperationBegin(string message)
     {
-        ProcessingDialog.gameObject.SetActive(true);
-        ProcessingDialog.Text = message;
+        //ProcessingDialog.gameObject.SetActive(true);
+        //ProcessingDialog.Text = message;
     }
 
     // Update is called once per frame
