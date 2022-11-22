@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         PlayerPreferences.EmailAddress = "brian.bacon01@gmail.com";
-        PlayerPreferences.PlayerId = "827a7e93-76af-4171-a605-bc3b10ec2a2e";
+        PlayerPreferences.PlayerId = "068e4856-dbb4-438c-bf04-4bdcc75d3557";
 
         EventManager.OnPause += EventManager_OnPause;
         EventManager.OnResume += EventManager_OnResume;
