@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     public EventManager EventManager;
 
     private List<Player> _players = new List<Player>();
-    public GameInfo CurrentGame { get; private set; }
+    public CareersGameInfo CurrentGame { get; private set; }
 
     // Start is called before the first frame update
     void Start()
@@ -33,7 +33,7 @@ public class GameManager : MonoBehaviour
         //_players.Add(p);
     }
 
-    private void EventManager_OnCreateGame(GameInfo gameInfo)
+    private void EventManager_OnCreateGame(CareersGameInfo gameInfo)
     {
         this.CurrentGame = gameInfo;
     }

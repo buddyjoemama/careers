@@ -2599,6 +2599,7 @@ MonoBehaviour:
   MainGamePanel: {fileID: 1393765914}
   ProcessingDialog: {fileID: 1539477031}
   TitleDialog: {fileID: 213658329}
+  FormulaDialog: {fileID: 647045401}
 --- !u!4 &210155559 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5929984153316553160, guid: 9be025ee41f925b4896dc186c409d10c, type: 3}
@@ -5498,7 +5499,19 @@ MonoBehaviour:
       m_Calls: []
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 647045401}
+        m_TargetAssemblyTypeName: FormulaDialog, Assembly-CSharp
+        m_MethodName: FormulaUpdate_OnChange
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnTouchScreenKeyboardStatusChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -7293,7 +7306,19 @@ MonoBehaviour:
       m_Calls: []
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 647045401}
+        m_TargetAssemblyTypeName: FormulaDialog, Assembly-CSharp
+        m_MethodName: FormulaUpdate_OnChange
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnTouchScreenKeyboardStatusChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -7394,7 +7419,7 @@ GameObject:
   - component: {fileID: 638905115}
   - component: {fileID: 638905114}
   m_Layer: 0
-  m_Name: Text (TMP)
+  m_Name: txtTotal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7755,6 +7780,7 @@ MonoBehaviour:
   Stars: {fileID: 479399410}
   Money: {fileID: 621875098}
   PointsLabel: {fileID: 1182133444}
+  TotalLabel: {fileID: 638905114}
 --- !u!114 &647045402
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11722,7 +11748,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1032469936}
   m_Layer: 0
-  m_Name: Managers
+  m_Name: Managers and Layout
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15768,7 +15794,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1416002162}
   m_LocalRotation: {x: 0.0026697817, y: 0.020174563, z: -0.000053872835, w: 0.99979293}
-  m_LocalPosition: {x: -2.242967, y: -1.8449125, z: -4.020114}
+  m_LocalPosition: {x: -2.043454, y: -1.8449125, z: -4.020114}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -18804,7 +18830,19 @@ MonoBehaviour:
       m_Calls: []
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 647045401}
+        m_TargetAssemblyTypeName: FormulaDialog, Assembly-CSharp
+        m_MethodName: FormulaUpdate_OnChange
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnTouchScreenKeyboardStatusChanged:
     m_PersistentCalls:
       m_Calls: []

@@ -11,7 +11,7 @@ public class EventManager : MonoBehaviour
     public event BeginGameAsyncOperation OnAsyncOperationBegin;
     public event EndGameAsyncOperation OnAsyncOperationEnd;
 
-    public delegate void CreateGameOperation(GameInfo gameInfo);
+    public delegate void CreateGameOperation(CareersGameInfo gameInfo);
     public event CreateGameOperation OnCreateGame;
 
     public delegate void GamePause();
@@ -50,7 +50,7 @@ public class EventManager : MonoBehaviour
         OnAsyncOperationEnd();
     }
 
-    public void CreateGame(GameInfo gameInfo)
+    public void CreateGame(CareersGameInfo gameInfo)
     {
         if(OnCreateGame != null)
            OnCreateGame(gameInfo);

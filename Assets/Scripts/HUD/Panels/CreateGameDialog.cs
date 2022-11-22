@@ -54,7 +54,7 @@ public class CreateGameDialog : MonoBehaviour
 
             if (request.result == UnityWebRequest.Result.Success)
             {
-                var response = JsonConvert.DeserializeObject<GameInfo>(request.downloadHandler.text);
+                var response = JsonConvert.DeserializeObject<CareersGameInfo>(request.downloadHandler.text);
                 EventManager.CreateGame(response);
                 this.gameObject.SetActive(false);
             }
