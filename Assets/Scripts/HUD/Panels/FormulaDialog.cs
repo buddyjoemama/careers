@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FormulaDialog : MonoBehaviour
 {
@@ -9,6 +10,9 @@ public class FormulaDialog : MonoBehaviour
     public TMP_InputField Money;
     public TMP_Text PointsLabel;
     public TMP_Text TotalLabel;
+    public Button OkButton;
+
+    private int _total = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -32,27 +36,30 @@ public class FormulaDialog : MonoBehaviour
     public void FormulaUpdate_OnChange()
     {
         UpdateTotal();
+
+        OkButton.interactable =
+            GameManager.CurrentGame.CareersGameState.TotalPoints == _total;
     }
 
     private void UpdateTotal()
     {
-        int total = 0;
+        _total = 0;
 
         if(int.TryParse(Hearts.text, out int hearts))
         {
-            total += hearts;
+            _total += hearts;
         }
 
         if(int.TryParse(Stars.text, out int starts))
         {
-            total += starts;
+            _total += starts;
         }
 
         if(int.TryParse(Money.text, out int money))
         {
-            total += money;
+            _total += money;
         }
 
-        TotalLabel.text = $"Total: {total}";
+        TotalLabel.text = $"Total: {_total}";
     }
 }

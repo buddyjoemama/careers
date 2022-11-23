@@ -33,7 +33,14 @@ public class CareersGameParameters
 
 public class CareersGameState
 {
+    [JsonProperty("gameId")]
     public String GameId { get; set; }
+
+    [JsonProperty("number_of_players")]
+    public int NumberOfPlayers { get; set; }
+
+    [JsonProperty("current_player_number")]
+    public int CurrentPlayer { get; set; }
 
     [JsonProperty("players")]
     public List<CareersGamePlayer> Players { get; set; }
@@ -44,18 +51,36 @@ public class CareersGameState
 
 public class CareersGamePlayer
 {
+    [JsonProperty("name")]
     public String Name { get; set; }
 
+    [JsonProperty("number")]
     public int Number { get; set; }
 
+    [JsonProperty("initials")]
     public String Initials { get; set; }
+
+    [JsonProperty("email")]
+    public String Email { get; set; }
+
+    [JsonProperty("_id")]
+    public String Id { get; set; }
+
+    [JsonProperty("game_complete")]
+    public bool GameComplete { get; set; }
+
+    [JsonProperty("successFormula")]
+    public CareersGamePlayerFormula SuccessFormula { get; set; }
 }
 
 public class CareersGamePlayerFormula
 {
+    [JsonProperty("money")]
     public int Money { get; set; }
 
+    [JsonProperty("stars")]
     public int Stars { get; set; }
 
+    [JsonProperty("hearts")]
     public int Hearts { get; set; }
 }

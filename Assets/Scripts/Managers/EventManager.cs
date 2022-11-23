@@ -14,6 +14,9 @@ public class EventManager : MonoBehaviour
     public delegate void CreateGameOperation(CareersGameInfo gameInfo);
     public event CreateGameOperation OnCreateGame;
 
+    public delegate void CreateUserOperation(CareersGamePlayer player);
+    public event CreateUserOperation OnUserCreated;
+
     public delegate void GamePause();
     public event GamePause OnPause;
     public event GamePause OnResume;
@@ -54,5 +57,10 @@ public class EventManager : MonoBehaviour
     {
         if(OnCreateGame != null)
            OnCreateGame(gameInfo);
+    }
+
+    public void CreateUser(CareersGamePlayer player)
+    {
+        OnUserCreated(player);
     }
 }

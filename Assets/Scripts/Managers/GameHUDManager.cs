@@ -20,14 +20,22 @@ public class GameHUDManager : MonoBehaviour
         EventManager.OnPause += EventManager_OnPause;
         EventManager.OnResume += EventManager_OnResume;
         EventManager.OnCreateGame += EventManager_OnOpenGame;
+        EventManager.OnUserCreated += EventManager_OnUserCreated;
 
-        //TitleDialog.gameObject.SetActive(true);
-        //FormulaDialog.gameObject.SetActive(false);
-        if(!PlayerPreferences.Initialized)
+        if (PlayerPreferences.Initialized)
         {
-            PausePanel.gameObject.SetActive(true);
+            TitleDialog.gameObject.SetActive(true);
+        }
+        else
+        {
             ProfilePanel.gameObject.SetActive(true);
         }
+    }
+
+    private void EventManager_OnUserCreated(CareersGamePlayer player)
+    {
+        ProfilePanel.gameObject.SetActive(false);
+        TitleDialog.gameObject.SetActive(true);
     }
 
     private void EventManager_OnOpenGame(CareersGameInfo gameInfo)
@@ -48,18 +56,21 @@ public class GameHUDManager : MonoBehaviour
 
     private void EventManager_OnAsyncOperationEnd()
     {
-        //ProcessingDialog.gameObject.SetActive(false);
+        ProcessingDialog.gameObject.SetActive(false);
     }
 
     private void EventManager_OnAsyncOperationBegin(string message)
     {
-        //ProcessingDialog.gameObject.SetActive(true);
-        //ProcessingDialog.Text = message;
+        ProcessingDialog.gameObject.SetActive(true);
+        ProcessingDialog.Text = message;
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        if(!PlayerPreferences.Initialized)
+        {
+            ProfilePanel.gameObject.SetActive(true);
+        }
     }
 }

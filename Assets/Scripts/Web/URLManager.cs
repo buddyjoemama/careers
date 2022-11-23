@@ -25,6 +25,11 @@ public class URLManager : MonoBehaviour
         return $"{ServerUrl}{url}";
     }
 
+    public string CreateUser()
+    {
+        return $"{ServerUrl}{GetUrl("CreateUser")}";
+    }
+
     private string GetUrl(String key)
     {
         return URLList.Single(s => s.StartsWith(key)).Split(new char[] { '=' }).Last();

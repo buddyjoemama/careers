@@ -12,7 +12,6 @@ public static class PlayerPreferences
         set
         {
             PlayerPrefs.SetString("email", value);
-            PlayerPrefs.Save();
         }
     }
 
@@ -25,7 +24,6 @@ public static class PlayerPreferences
         set
         {
             PlayerPrefs.SetString("name", value);
-            PlayerPrefs.Save();
         }
     }
 
@@ -38,7 +36,6 @@ public static class PlayerPreferences
         set
         {
             PlayerPrefs.SetString("player_id", value);
-            PlayerPrefs.Save();
         }
     }
 
@@ -51,8 +48,12 @@ public static class PlayerPreferences
         set
         {
             PlayerPrefs.SetString("initials", value);
-            PlayerPrefs.Save();
         }
+    }
+
+    public static void Save()
+    {
+        PlayerPrefs.Save();
     }
 
     public static bool Initialized => PlayerPrefs.HasKey("name");
