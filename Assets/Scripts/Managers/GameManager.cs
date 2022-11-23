@@ -15,9 +15,6 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        PlayerPreferences.EmailAddress = "brian.bacon01@gmail.com";
-        PlayerPreferences.PlayerId = "068e4856-dbb4-438c-bf04-4bdcc75d3557";
-
         EventManager.OnPause += EventManager_OnPause;
         EventManager.OnResume += EventManager_OnResume;
         EventManager.OnCreateGame += EventManager_OnCreateGame;

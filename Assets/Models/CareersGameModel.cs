@@ -33,6 +33,8 @@ public class CareersGameParameters
 
 public class CareersGameState
 {
+    public String GameId { get; set; }
+
     [JsonProperty("players")]
     public List<CareersGamePlayer> Players { get; set; }
 
