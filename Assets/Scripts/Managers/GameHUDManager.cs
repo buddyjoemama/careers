@@ -11,6 +11,7 @@ public class GameHUDManager : MonoBehaviour
     public FormulaDialog FormulaDialog;
     public PlayerProfilePanel ProfilePanel;
     public GameObject PausePanel;
+    public PlayerStatusPanel PlayerStatusPanel;
 
     // Start is called before the first frame update
     void Start()
@@ -19,8 +20,10 @@ public class GameHUDManager : MonoBehaviour
         EventManager.OnAsyncOperationEnd += EventManager_OnAsyncOperationEnd;
         EventManager.OnPause += EventManager_OnPause;
         EventManager.OnResume += EventManager_OnResume;
-        EventManager.OnCreateGame += EventManager_OnOpenGame;
+        EventManager.OnCreateGame += EventManager_OnCreateGame;
         EventManager.OnUserCreated += EventManager_OnUserCreated;
+
+        PlayerStatusPanel.gameObject.SetActive(false);
 
         if (PlayerPreferences.Initialized)
         {
@@ -38,10 +41,12 @@ public class GameHUDManager : MonoBehaviour
         TitleDialog.gameObject.SetActive(true);
     }
 
-    private void EventManager_OnOpenGame(CareersGameInfo gameInfo)
+    private void EventManager_OnCreateGame(CareersGameInfo gameInfo)
     {
         MainGamePanel.gameObject.SetActive(true);
         TitleDialog.gameObject.SetActive(false);
+        PlayerStatusPanel.gameObject.SetActive(true);
+        FormulaDialog.gameObject.SetActive(true);
     }
 
     private void EventManager_OnResume()
@@ -71,6 +76,18 @@ public class GameHUDManager : MonoBehaviour
         if(!PlayerPreferences.Initialized)
         {
             ProfilePanel.gameObject.SetActive(true);
+        }
+
+        if (Input.GetKeyUp(KeyCode.F))
+        {
+            if(FormulaDialog.gameObject.activeSelf)
+            {
+                FormulaDialog.gameObject.SetActive(false);
+            }
+            else
+            {
+                FormulaDialog.gameObject.SetActive(true);
+            }
         }
     }
 }
