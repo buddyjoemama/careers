@@ -9,6 +9,9 @@ public class PlayerStatusPanel : MonoBehaviour
     public TMP_Text Hearts;
     public TMP_Text Stars;
     public TMP_Text Money;
+    public TMP_Text FormulaHearts;
+    public TMP_Text ForumlaStars;
+    public TMP_Text FormulaMoney;
 
     // Start is called before the first frame update
     void Start()
