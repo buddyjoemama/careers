@@ -6,7 +6,8 @@ using System;
 
 public class Player : MonoBehaviour
 {
-    public Formula Formula { get; private set; } = new Formula();
+    public CareersGamePlayerFormula Formula { get; private set; }
+        = new CareersGamePlayerFormula();
 
     internal void SetFormula(string hearts, string stars, string money)
     {
