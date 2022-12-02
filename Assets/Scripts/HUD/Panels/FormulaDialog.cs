@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class FormulaDialog : MonoBehaviour
 {
     public GameManager GameManager;
+    public EventManager EventManager;
     public TMP_InputField Hearts;
     public TMP_InputField Stars;
     public TMP_InputField Money;
@@ -31,6 +32,10 @@ public class FormulaDialog : MonoBehaviour
     {
        // GameManager.Player.SetFormula(Hearts.text, Stars.text, Money.text);
         this.gameObject.SetActive(false);
+        EventManager.AddUpdateFormula(
+            new CareersGamePlayerFormula(int.Parse(Hearts.text),
+                int.Parse(Stars.text),
+                int.Parse(Money.text)));
     }
 
     public void FormulaUpdate_OnChange()

@@ -75,6 +75,13 @@ public class CareersGamePlayer
 
 public class CareersGamePlayerFormula
 {
+    public CareersGamePlayerFormula(int hearts, int stars, int money)
+    {
+        Money = money;
+        Hearts = hearts;
+        Stars = stars;
+    }
+
     [JsonProperty("money")]
     public int Money { get; set; }
 

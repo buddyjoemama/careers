@@ -14,7 +14,7 @@ public static class PlayerPreferences
             PlayerPrefs.SetString("email", value);
         }
     }
-
+    
     public static String Name
     {
         get
@@ -31,6 +31,7 @@ public static class PlayerPreferences
     {
         get
         {
+            return "07c50af2-2ed5-4c01-94ed-5d5ac8780024";
             return PlayerPrefs.GetString("player_id");
         }
         set

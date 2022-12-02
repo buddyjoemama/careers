@@ -17,6 +17,9 @@ public class EventManager : MonoBehaviour
     public delegate void CreateUserOperation(CareersGamePlayer player);
     public event CreateUserOperation OnUserCreated;
 
+    public delegate void UpdateFormula(CareersGamePlayerFormula formula);
+    public event UpdateFormula OnUpdateFormula;
+
     public delegate void GamePause();
     public event GamePause OnPause;
     public event GamePause OnResume;
@@ -62,5 +65,10 @@ public class EventManager : MonoBehaviour
     public void CreateUser(CareersGamePlayer player)
     {
         OnUserCreated(player);
+    }
+
+    public void AddUpdateFormula(CareersGamePlayerFormula formula)
+    {
+        OnUpdateFormula(formula);
     }
 }
