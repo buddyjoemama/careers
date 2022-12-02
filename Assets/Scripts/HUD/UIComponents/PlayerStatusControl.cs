@@ -2,11 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
+[ExecuteInEditMode]
 public class PlayerStatusControl : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     public GameObject NameControl;
-
+    public Color PlayerColor;
+    public Image PlayerIcon;
+     
     // Start is called before the first frame update
     void Start()
     {
@@ -16,7 +20,7 @@ public class PlayerStatusControl : MonoBehaviour, IPointerEnterHandler, IPointer
     // Update is called once per frame
     void Update()
     {
-        
+        PlayerIcon.color = PlayerColor;
     }
 
     public void OnMouseOver()
@@ -31,6 +35,7 @@ public class PlayerStatusControl : MonoBehaviour, IPointerEnterHandler, IPointer
 
     public void OnPointerEnter(PointerEventData eventData)
     {
+        //NameControl.GetComponent<RectTransform>().localPosition = new Vector3(-175, eventData.position.y);
         NameControl.SetActive(true);
     }
 

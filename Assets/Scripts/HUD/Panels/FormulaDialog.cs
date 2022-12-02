@@ -29,7 +29,7 @@ public class FormulaDialog : MonoBehaviour
 
     public void SaveFormula_OnClick()
     {
-        GameManager.Player.SetFormula(Hearts.text, Stars.text, Money.text);
+       // GameManager.Player.SetFormula(Hearts.text, Stars.text, Money.text);
         this.gameObject.SetActive(false);
     }
 
