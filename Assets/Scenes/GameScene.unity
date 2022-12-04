@@ -18593,11 +18593,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1416002162}
   m_LocalRotation: {x: 0.0026697817, y: 0.020174563, z: -0.000053872835, w: 0.99979293}
-<<<<<<< HEAD
   m_LocalPosition: {x: -2.461118, y: -1.8673214, z: -4.018472}
-=======
-  m_LocalPosition: {x: -2.540148, y: -1.8673214, z: -4.018472}
->>>>>>> eda41b0e20e0079c100c365561d0c5e722d576af
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -22145,12 +22141,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-<<<<<<< HEAD
-  m_Children: []
-=======
   m_Children:
   - {fileID: 3403224114248486149}
->>>>>>> eda41b0e20e0079c100c365561d0c5e722d576af
   m_Father: {fileID: 471363011}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -22535,11 +22527,7 @@ MonoBehaviour:
   Stars: {fileID: 1055638964}
   Money: {fileID: 2129821408}
   FormulaHearts: {fileID: 204971245}
-<<<<<<< HEAD
-  ForumlaStars: {fileID: 0}
-=======
   FormulaStars: {fileID: 1852803911}
->>>>>>> eda41b0e20e0079c100c365561d0c5e722d576af
   FormulaMoney: {fileID: 2074510115}
 --- !u!1 &1707051903
 GameObject:
@@ -29684,8 +29672,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5549602638026996165, guid: 7cb5be8c98182bc4d847e48c846e4106, type: 3}
   m_PrefabInstance: {fileID: 2181148750533683727}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
-=======
 --- !u!1001 &3403224114248486148
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29860,7 +29846,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1262785955891631506, guid: 075f0bb9fe6e7484481ce51bcf578422, type: 3}
   m_PrefabInstance: {fileID: 3403224114248486148}
   m_PrefabAsset: {fileID: 0}
->>>>>>> eda41b0e20e0079c100c365561d0c5e722d576af
 --- !u!1001 &7910274393250845560
 PrefabInstance:
   m_ObjectHideFlags: 0
