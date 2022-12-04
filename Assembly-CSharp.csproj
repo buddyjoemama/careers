@@ -69,9 +69,7 @@
     <Compile Include="Assets/Scripts/HUD/Panels/RollPanel.cs" />
     <Compile Include="Assets/Scripts/GameSquareCameraGroupAdjuster.cs" />
     <Compile Include="Assets/Scripts/HUD/UIComponents/GameInfoComponent.cs" />
-    <Compile Include="Assets/Scripts/HUD/UIComponents/PlayerStatusControl.cs" />
     <Compile Include="Assets/Scripts/Web/URLManager.cs" />
-    <Compile Include="Assets/Scripts/Managers/PlayersPanelManager.cs" />
     <Compile Include="Assets/Scripts/HUD/Panels/FormulaDialog.cs" />
     <Compile Include="Assets/Scripts/HUD/PlayerPreferences.cs" />
     <Compile Include="Assets/Scripts/Managers/GameManager.cs" />
@@ -84,6 +82,8 @@
     <Compile Include="Assets/Scripts/Helpers/StringHelpers.cs" />
     <Compile Include="Assets/Scripts/HUD/UIComponents/PlayerInfo.cs" />
     <Compile Include="Assets/Scripts/Player.cs" />
+    <Compile Include="Assets/Scripts/HUD/Panels/PlayersPanel.cs" />
+    <Compile Include="Assets/Scripts/Managers/PlayersManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />
