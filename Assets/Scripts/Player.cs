@@ -6,25 +6,11 @@ using System;
 
 public class Player : MonoBehaviour
 {
-    public CareersGamePlayerFormula Formula { get; private set; }
-        = new CareersGamePlayerFormula();
+    public EventManager EventManager;
 
-    internal void SetFormula(string hearts, string stars, string money)
+    public void Awake()
     {
-        if(int.TryParse(hearts, out int h))
-        {
-            Formula.Hearts = h;
-        }
-
-        if(int.TryParse(stars, out int s))
-        {
-            Formula.Stars = s;
-        }
-
-        if(int.TryParse(money, out int m))
-        {
-            Formula.Money = m;
-        }
+            
     }
 
     // Start is called before the first frame update

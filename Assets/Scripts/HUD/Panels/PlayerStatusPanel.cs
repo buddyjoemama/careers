@@ -10,13 +10,26 @@ public class PlayerStatusPanel : MonoBehaviour
     public TMP_Text Stars;
     public TMP_Text Money;
     public TMP_Text FormulaHearts;
-    public TMP_Text ForumlaStars;
+    public TMP_Text FormulaStars;
     public TMP_Text FormulaMoney;
+
+    private void Awake()
+    {
+        EventManager.OnCreateGame += EventManager_OnCreateGame;
+        EventManager.OnUpdateFormula += EventManager_OnUpdateFormula;
+    }
+
+    private void EventManager_OnUpdateFormula(CareersGamePlayerFormula formula)
+    {
+        FormulaHearts.text = $"/{formula.Hearts}";
+        FormulaMoney.text = string.Format("/{0:n0}", (formula.Money * 1000));
+        FormulaStars.text = $"/{formula.Stars}";
+    }
 
     // Start is called before the first frame update
     void Start()
     {
-        EventManager.OnCreateGame += EventManager_OnCreateGame;
+        
     }
 
     private void EventManager_OnCreateGame(CareersGameInfo gameInfo)
