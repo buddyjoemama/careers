@@ -7,6 +7,9 @@ public class PlayersManager : MonoBehaviour
 {
     public delegate void PlayerJoined(CareersGamePlayer player);
     public event PlayerJoined OnPlayerJoined;
+
+    public delegate void PlayerLoaded(CareersGamePlayer player);
+    public event PlayerLoaded OnPlayerLoaded;
     
     public EventManager EventManager;
     public URLManager UrlManager;
@@ -32,6 +35,7 @@ public class PlayersManager : MonoBehaviour
     private void EventManager_OnCreateGame(CareersGameInfo gameInfo)
     {
         _players.AddRange(gameInfo.CareersGameState.Players);
+        OnPlayerLoaded(Me);
     }
 
     // Update is called once per frame
@@ -41,5 +45,5 @@ public class PlayersManager : MonoBehaviour
     }
 
     public CareersGamePlayer Me =>
-        _players.Single(s => s.Id == PlayerPreferences.PlayerId);
+        _players.SingleOrDefault(s => s.Id == PlayerPreferences.PlayerId);
 }

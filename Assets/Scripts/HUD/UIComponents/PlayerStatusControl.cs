@@ -10,7 +10,9 @@ public class PlayerStatusControl : MonoBehaviour, IPointerEnterHandler, IPointer
     public GameObject NameControl;
     public Color PlayerColor;
     public Image PlayerIcon;
-     
+
+    public CareersGamePlayer Player { get; set; }
+
     // Start is called before the first frame update
     void Start()
     {
