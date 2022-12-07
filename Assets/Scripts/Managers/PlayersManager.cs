@@ -10,11 +10,19 @@ public class PlayersManager : MonoBehaviour
 
     public delegate void PlayerLoaded(CareersGamePlayer player);
     public event PlayerLoaded OnPlayerLoaded;
-    
+
     public EventManager EventManager;
     public URLManager UrlManager;
 
     private List<CareersGamePlayer> _players = new List<CareersGamePlayer>();
+    private Color[] _playerColors = new [] { Color.red, Color.yellow,
+        Color.magenta, Color.grey, Color.green,
+        Color.cyan, Color.blue, Color.black};
+
+    private void Awake()
+    {
+        _playerColors[0] = Color.red;    
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -46,4 +54,10 @@ public class PlayersManager : MonoBehaviour
 
     public CareersGamePlayer Me =>
         _players.SingleOrDefault(s => s.Id == PlayerPreferences.PlayerId);
+
+
+    public Color GetPlayerColor(CareersGamePlayer player)
+    {
+        return _playerColors[player.Number];
+    }
 }

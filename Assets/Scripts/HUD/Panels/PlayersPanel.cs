@@ -24,6 +24,7 @@ public class PlayersPanel : MonoBehaviour
         var control = Instantiate(CanonicalPlayerControl, _players.transform);
         control.gameObject.SetActive(true);
         control.Player = player;
+        control.PlayerColor = PlayersManager.GetPlayerColor(player);
     }
 
     /// <summary>

@@ -61,7 +61,9 @@
     <Compile Include="Assets/Scripts/HUD/Panels/PlayerProfilePanel.cs" />
     <Compile Include="Assets/Scripts/HUD/Panels/ProcessingDialog.cs" />
     <Compile Include="Assets/Scripts/HUD/Panels/CreateGameDialog.cs" />
+    <Compile Include="Assets/Scripts/HUD/Panels/PlayersPanel.cs" />
     <Compile Include="Assets/Scripts/HUD/Panels/MainGamePanel.cs" />
+    <Compile Include="Assets/Scripts/Managers/PlayersManager.cs" />
     <Compile Include="Assets/Models/CareersGameModel.cs" />
     <Compile Include="Assets/Scripts/HUD/Panels/TitleDialog.cs" />
     <Compile Include="Assets/Scripts/HUD/Panels/PlayerStatusPanel.cs" />
@@ -69,6 +71,7 @@
     <Compile Include="Assets/Scripts/HUD/Panels/RollPanel.cs" />
     <Compile Include="Assets/Scripts/GameSquareCameraGroupAdjuster.cs" />
     <Compile Include="Assets/Scripts/HUD/UIComponents/GameInfoComponent.cs" />
+    <Compile Include="Assets/Scripts/HUD/UIComponents/PlayerStatusControl.cs" />
     <Compile Include="Assets/Scripts/Web/URLManager.cs" />
     <Compile Include="Assets/Scripts/HUD/Panels/FormulaDialog.cs" />
     <Compile Include="Assets/Scripts/HUD/PlayerPreferences.cs" />
@@ -76,14 +79,12 @@
     <Compile Include="Assets/Scripts/Hotspot.cs" />
     <Compile Include="Assets/Scripts/OccupationSquare.cs" />
     <Compile Include="Assets/Scripts/Managers/EventManager.cs" />
-    <Compile Include="Assets/Scripts/Managers/ViewManager.cs" />
     <Compile Include="Assets/Scripts/Helpers/RotateBoard.cs" />
     <Compile Include="Assets/Scripts/Managers/GameHUDManager.cs" />
     <Compile Include="Assets/Scripts/Helpers/StringHelpers.cs" />
     <Compile Include="Assets/Scripts/HUD/UIComponents/PlayerInfo.cs" />
     <Compile Include="Assets/Scripts/Player.cs" />
-    <Compile Include="Assets/Scripts/HUD/Panels/PlayersPanel.cs" />
-    <Compile Include="Assets/Scripts/Managers/PlayersManager.cs" />
+    <Compile Include="Assets/Scripts/Managers/GameViewManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />
