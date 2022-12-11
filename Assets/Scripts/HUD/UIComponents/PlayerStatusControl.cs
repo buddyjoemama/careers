@@ -5,44 +5,41 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 [ExecuteInEditMode]
-public class PlayerStatusControl : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class PlayerStatusControl : MonoBehaviour, IPointerClickHandler
 {
     public GameObject NameControl;
     public Color PlayerColor;
     public Image PlayerIcon;
-
+    public Transform SelectedIcon;
+    public bool IsSelected;
+    public Color SelectedColor;
     public CareersGamePlayer Player { get; set; }
+    public PlayersManager PlayersManager;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        PlayersManager.OnPlayerSelected += PlayersManager_OnPlayerSelected;
     }
-     
+
+    private void PlayersManager_OnPlayerSelected(CareersGamePlayer player)
+    {
+        IsSelected = !IsSelected;
+    }
+
     // Update is called once per frame
     void Update()
     {
         PlayerIcon.color = PlayerColor;
+
+        if (IsSelected)
+            SelectedIcon.GetComponent<Image>().color = SelectedColor;
+        else
+            SelectedIcon.GetComponent<Image>().color = Color.clear;
     }
 
-    public void OnMouseOver()
+    public void OnPointerClick(PointerEventData eventData)
     {
-        NameControl.SetActive(true);
-    }
-
-    public void OnMouseExit()
-    {
-        NameControl.SetActive(false);
-    }
-
-    public void OnPointerEnter(PointerEventData eventData)
-    {
-        //NameControl.GetComponent<RectTransform>().localPosition = new Vector3(-175, eventData.position.y);
-        NameControl.SetActive(true);
-    }
-
-    public void OnPointerExit(PointerEventData eventData)
-    {
-        NameControl.SetActive(false);
+        PlayersManager.SelectPlayer(Player);
     }
 }

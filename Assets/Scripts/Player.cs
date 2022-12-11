@@ -3,37 +3,48 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using System;
+using UnityEngine.EventSystems;
 
 [ExecuteInEditMode]
-public class Player : MonoBehaviour
+public class Player : MonoBehaviour, IPointerClickHandler
 {
     public EventManager EventManager;
     public Color Color;
-    private CareersGamePlayer _careersGamePlayer;
-    private SpriteRenderer _sprite;
-
-    public string PlayerId { get; internal set; }
+    public PlayersManager PlayersManager;
+    public CareersGamePlayer CareersGamePlayer { set; get; }
+    public bool IsSelected = false;
+    public SpriteRenderer SelectedSprite;
+    public SpriteRenderer PlayerSprite;
 
     public void SetPlayer(CareersGamePlayer player)
     {
-        _careersGamePlayer = player;
+        CareersGamePlayer = player;
     }
 
     public void Awake()
     {
-     
+        
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        _sprite = GetComponentInChildren<SpriteRenderer>();   
+        PlayersManager.OnPlayerSelected += PlayersManager_OnPlayerSelected;
+    }
+
+    private void PlayersManager_OnPlayerSelected(CareersGamePlayer player)
+    {
+        if(player.Id == PlayersManager.Me.Id)
+        {
+            IsSelected = !IsSelected;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        _sprite.color = Color;
+        PlayerSprite.color = Color;
+        SelectedSprite.gameObject.SetActive(IsSelected);
         //// Find the squares we are on...could potentially be on > 1
         //var foundSquares = Physics2D.BoxCastAll(this.transform.position,
         //    new Vector2(this.transform.localScale.x, this.transform.localScale.y),
@@ -55,5 +66,20 @@ public class Player : MonoBehaviour
         ////    CurrentGameBoardSquare = foundSquare;
         ////    Debug.Log("Updated to " + foundSquare.tag);
         ////}
+    }
+
+    public bool IsPlayer(CareersGamePlayer player)
+    {
+        return CareersGamePlayer.Id == player.Id;
+    }
+
+    public bool IsMe()
+    {
+        return CareersGamePlayer.Id == PlayersManager.Me.Id;
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        PlayersManager.SelectPlayer(CareersGamePlayer);
     }
 }

@@ -37,9 +37,10 @@ public class GameViewManager : MonoBehaviour, IEventSystemHandler
     private void InstantiatePlayer(CareersGamePlayer player)
     {
         var newPlayer = Instantiate(CanonicalPlayer, PlayerContainer);
+        newPlayer.PlayersManager = PlayersManager;
         newPlayer.transform.position = StartPosition.transform.position;
         newPlayer.Color = PlayersManager.GetPlayerColor(player);
-        newPlayer.PlayerId = player.Id;
+        newPlayer.SetPlayer(player);
 
         CinemachineTargetGroup.AddMember(newPlayer.transform, 6, 0);
         _playerMembers.Add(newPlayer, newPlayer.transform);

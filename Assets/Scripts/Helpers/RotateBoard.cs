@@ -21,7 +21,12 @@ public class RotateBoard : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        StartCoroutine(Rotate());
+        var player = collision.attachedRigidbody.GetComponent<Player>();
+
+        if (player.IsMe())
+        {
+            StartCoroutine(Rotate());
+        }
     }
 
     private IEnumerator Rotate()

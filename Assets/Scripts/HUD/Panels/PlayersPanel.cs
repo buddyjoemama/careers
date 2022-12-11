@@ -25,6 +25,7 @@ public class PlayersPanel : MonoBehaviour
         control.gameObject.SetActive(true);
         control.Player = player;
         control.PlayerColor = PlayersManager.GetPlayerColor(player);
+        control.PlayersManager = PlayersManager;
     }
 
     /// <summary>
@@ -33,7 +34,7 @@ public class PlayersPanel : MonoBehaviour
     /// <param name="player">The player who joined the game.</param>
     private void PlayersManager_OnPlayerJoined(CareersGamePlayer player)
     {
-        
+        PlayersManager_OnPlayerLoaded(player);
     }
 
     // Start is called before the first frame update

@@ -11,6 +11,9 @@ public class PlayersManager : MonoBehaviour
     public delegate void PlayerLoaded(CareersGamePlayer player);
     public event PlayerLoaded OnPlayerLoaded;
 
+    public delegate void PlayerSelected(CareersGamePlayer player);
+    public event PlayerSelected OnPlayerSelected;
+
     public EventManager EventManager;
     public URLManager UrlManager;
 
@@ -52,8 +55,21 @@ public class PlayersManager : MonoBehaviour
         
     }
 
+    public void JoinPlayer(CareersGamePlayer player)
+    {
+        _players.Add(player);
+        OnPlayerJoined(player);
+    }
+
+    public void SelectPlayer(CareersGamePlayer player)
+    {
+        OnPlayerSelected(player);
+    }
+
     public CareersGamePlayer Me =>
         _players.SingleOrDefault(s => s.Id == PlayerPreferences.PlayerId);
+
+    public int PlayerCount => _players.Count();
 
 
     public Color GetPlayerColor(CareersGamePlayer player)
