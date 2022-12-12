@@ -1,15 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using Cinemachine;
-using UnityEditor.UIElements;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.UI;
-using System.Linq;
 
 public class GameViewManager : MonoBehaviour, IEventSystemHandler
 {
     public CinemachineTargetGroup CinemachineTargetGroup;
+    public PlayerMoveManager PlayerMoveManager;
     public PlayersManager PlayersManager;
     public Transform StartPosition;
     public Transform PlayerContainer;
@@ -34,6 +31,10 @@ public class GameViewManager : MonoBehaviour, IEventSystemHandler
         InstantiatePlayer(player);
     }
 
+    /// <summary>
+    /// PlayerContainer is the transform located at Payday.
+    /// </summary>
+    /// <param name="player"></param>
     private void InstantiatePlayer(CareersGamePlayer player)
     {
         var newPlayer = Instantiate(CanonicalPlayer, PlayerContainer);

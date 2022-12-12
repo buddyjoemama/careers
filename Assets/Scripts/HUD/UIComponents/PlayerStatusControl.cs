@@ -24,7 +24,7 @@ public class PlayerStatusControl : MonoBehaviour, IPointerClickHandler
 
     private void PlayersManager_OnPlayerSelected(CareersGamePlayer player)
     {
-        IsSelected = !IsSelected;
+        IsSelected = player.Id == Player.Id && !IsSelected;
     }
 
     // Update is called once per frame

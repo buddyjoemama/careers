@@ -29,15 +29,15 @@ public class Player : MonoBehaviour, IPointerClickHandler
     // Start is called before the first frame update
     void Start()
     {
-        PlayersManager.OnPlayerSelected += PlayersManager_OnPlayerSelected;
+        if (PlayersManager != null)
+        {
+            PlayersManager.OnPlayerSelected += PlayersManager_OnPlayerSelected;
+        }
     }
 
     private void PlayersManager_OnPlayerSelected(CareersGamePlayer player)
     {
-        if(player.Id == PlayersManager.Me.Id)
-        {
-            IsSelected = !IsSelected;
-        }
+        IsSelected = player.Id == CareersGamePlayer.Id && !IsSelected;
     }
 
     // Update is called once per frame

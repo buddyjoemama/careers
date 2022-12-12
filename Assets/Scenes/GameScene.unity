@@ -1707,6 +1707,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2066245844909210899, guid: e923b0bf225684eb5a7d0f23a1ec51f3, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -3.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2066245844909210899, guid: e923b0bf225684eb5a7d0f23a1ec51f3, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -2.59
+      objectReference: {fileID: 0}
     - target: {fileID: 4688086285981426468, guid: e923b0bf225684eb5a7d0f23a1ec51f3, type: 3}
       propertyPath: Color.a
       value: 1
@@ -9248,7 +9256,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bab39725020fae41836456d80fa5d0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameManager: {fileID: 1994622398}
+  GameManager: {fileID: 0}
   EventManager: {fileID: 983239173}
   Hearts: {fileID: 1690348798}
   Stars: {fileID: 479399410}
@@ -26066,7 +26074,7 @@ GameObject:
   - component: {fileID: 1953027932}
   - component: {fileID: 1953027933}
   m_Layer: 0
-  m_Name: ViewManager
+  m_Name: GameViewManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26100,6 +26108,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CinemachineTargetGroup: {fileID: 1770036331}
+  PlayerMoveManager: {fileID: 1994622399}
   PlayersManager: {fileID: 1109795931}
   StartPosition: {fileID: 1928030789}
   PlayerContainer: {fileID: 1684720529}
@@ -26724,10 +26733,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1994622397}
-  - component: {fileID: 1994622398}
   - component: {fileID: 1994622399}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: Layout and cameras
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26752,20 +26760,6 @@ Transform:
   m_Father: {fileID: 1032469936}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1994622398
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1994622395}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5486f5fca660241af8cd60485e8ee51e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Player: {fileID: 4688086285981426468, guid: e923b0bf225684eb5a7d0f23a1ec51f3, type: 3}
-  EventManager: {fileID: 983239173}
 --- !u!114 &1994622399
 MonoBehaviour:
   m_ObjectHideFlags: 0
