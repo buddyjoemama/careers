@@ -12,30 +12,54 @@ public class GameViewManager : MonoBehaviour, IEventSystemHandler
     public Transform PlayerContainer;
     public Player CanonicalPlayer;
 
-    private Dictionary<Player, Transform> _playerMembers
-        = new Dictionary<Player, Transform>();
+    private Dictionary<CareersGamePlayer, Player> _playerMembers
+        = new Dictionary<CareersGamePlayer, Player>();
+
+    private int _currentViewPlayer = 0;
 
     void Awake()
     {
         PlayersManager.OnPlayerLoaded += PlayersManager_OnPlayerLoaded;
         PlayersManager.OnPlayerJoined += PlayersManager_OnPlayerJoined;
+        PlayersManager.OnPlayerSelected += PlayersManager_OnPlayerSelected;
+    }
+
+    /// <summary>
+    /// Zoom-in to the selected player.
+    /// </summary>
+    /// <param name="player"></param>
+    private void PlayersManager_OnPlayerSelected(CareersGamePlayer player)
+    {
+        var gameBoardPlayer = _playerMembers[player];
+        var cameraMember = CinemachineTargetGroup.FindMember(gameBoardPlayer.transform);
+
+        CinemachineTargetGroup.m_Targets[_currentViewPlayer].weight = 0;
+        CinemachineTargetGroup.m_Targets[cameraMember].weight = 6;
+        _currentViewPlayer = cameraMember;
     }
 
     private void PlayersManager_OnPlayerJoined(CareersGamePlayer player)
     {
-        InstantiatePlayer(player);
+        var newPlayer = InstantiatePlayer(player, 0);
+
+        // Debug code
+        var position = PlayerMoveManager[Random.Range(1, 40)];
+        newPlayer.transform.position = position.transform.position;
     }
 
     private void PlayersManager_OnPlayerLoaded(CareersGamePlayer player)
     {
-        InstantiatePlayer(player);
+        var newPlayer = InstantiatePlayer(player, 6);
+
+        // Camea should be focused on the current player (the player who created the game).
+        _currentViewPlayer = CinemachineTargetGroup.FindMember(newPlayer.transform);
     }
 
     /// <summary>
     /// PlayerContainer is the transform located at Payday.
     /// </summary>
     /// <param name="player"></param>
-    private void InstantiatePlayer(CareersGamePlayer player)
+    private Player InstantiatePlayer(CareersGamePlayer player, int weight)
     {
         var newPlayer = Instantiate(CanonicalPlayer, PlayerContainer);
         newPlayer.PlayersManager = PlayersManager;
@@ -43,8 +67,10 @@ public class GameViewManager : MonoBehaviour, IEventSystemHandler
         newPlayer.Color = PlayersManager.GetPlayerColor(player);
         newPlayer.SetPlayer(player);
 
-        CinemachineTargetGroup.AddMember(newPlayer.transform, 6, 0);
-        _playerMembers.Add(newPlayer, newPlayer.transform);
+        CinemachineTargetGroup.AddMember(newPlayer.transform, weight, 0);
+        _playerMembers.Add(player, newPlayer);
+
+        return newPlayer;
     }
 
     //public Slider slider;    

@@ -18,13 +18,12 @@ public class PlayersManager : MonoBehaviour
     public URLManager UrlManager;
 
     private List<CareersGamePlayer> _players = new List<CareersGamePlayer>();
-    private Color[] _playerColors = new [] { Color.red, Color.yellow,
+    private Color[] _playerColors = new [] { Color.red, Color.magenta,
         Color.magenta, Color.grey, Color.green,
         Color.cyan, Color.blue, Color.black};
 
     private void Awake()
     {
-        _playerColors[0] = Color.red;    
     }
 
     // Start is called before the first frame update
