@@ -18,9 +18,9 @@ public class PlayersManager : MonoBehaviour
     public URLManager UrlManager;
 
     private List<CareersGamePlayer> _players = new List<CareersGamePlayer>();
-    private Color[] _playerColors = new [] { Color.red, Color.magenta,
+    private Color[] _playerColors = new[] { Color.red, Color.black,
         Color.magenta, Color.grey, Color.green,
-        Color.cyan, Color.blue, Color.black};
+        Color.cyan, Color.blue };
 
     private void Awake()
     {
