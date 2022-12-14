@@ -29,6 +29,8 @@ public class Player : MonoBehaviour, IPointerClickHandler
     // Start is called before the first frame update
     void Start()
     {
+        SelectedSprite.sortingOrder = 2;
+
         if (PlayersManager != null)
         {
             PlayersManager.OnPlayerSelected += PlayersManager_OnPlayerSelected;
@@ -45,6 +47,7 @@ public class Player : MonoBehaviour, IPointerClickHandler
     {
         PlayerSprite.color = Color;
         SelectedSprite.gameObject.SetActive(IsSelected);
+
         //// Find the squares we are on...could potentially be on > 1
         //var foundSquares = Physics2D.BoxCastAll(this.transform.position,
         //    new Vector2(this.transform.localScale.x, this.transform.localScale.y),

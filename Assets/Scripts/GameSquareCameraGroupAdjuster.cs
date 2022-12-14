@@ -34,7 +34,7 @@ public class GameSquareCameraGroupAdjuster : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (enabled)
+        if (enabled && collision.GetComponent<Player>().IsMe())
         {
             _oldWeight = TargetGroup.m_Targets[TargetGroup.FindMember(Target)].weight;
             TargetGroup.m_Targets[TargetGroup.FindMember(Target)].weight = TargetWeight;
@@ -43,7 +43,7 @@ public class GameSquareCameraGroupAdjuster : MonoBehaviour
 
     public void OnTriggerExit2D(Collider2D collision)
     {
-        if(enabled)
+        if(enabled && collision.GetComponent<Player>().IsMe())
             TargetGroup.m_Targets[TargetGroup.FindMember(Target)].weight = _oldWeight;
     }
 }

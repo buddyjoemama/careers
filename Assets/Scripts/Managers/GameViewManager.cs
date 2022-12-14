@@ -30,12 +30,15 @@ public class GameViewManager : MonoBehaviour, IEventSystemHandler
     /// <param name="player"></param>
     private void PlayersManager_OnPlayerSelected(CareersGamePlayer player)
     {
-        var gameBoardPlayer = _playerMembers[player];
-        var cameraMember = CinemachineTargetGroup.FindMember(gameBoardPlayer.transform);
+        if (player != null)
+        {
+            var gameBoardPlayer = _playerMembers[player];
+            var cameraMember = CinemachineTargetGroup.FindMember(gameBoardPlayer.transform);
 
-        CinemachineTargetGroup.m_Targets[_currentViewPlayer].weight = 0;
-        CinemachineTargetGroup.m_Targets[cameraMember].weight = 6;
-        _currentViewPlayer = cameraMember;
+            CinemachineTargetGroup.m_Targets[_currentViewPlayer].weight = 0;
+            CinemachineTargetGroup.m_Targets[cameraMember].weight = 6;
+            _currentViewPlayer = cameraMember;
+        }
     }
 
     private void PlayersManager_OnPlayerJoined(CareersGamePlayer player)
