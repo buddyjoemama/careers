@@ -7,7 +7,6 @@ using UnityEngine.UI;
 [ExecuteInEditMode]
 public class PlayerStatusControl : MonoBehaviour, IPointerClickHandler
 {
-    public GameObject NameControl;
     public Color PlayerColor;
     public Image PlayerIcon;
     public Transform SelectedIcon;
@@ -17,25 +16,25 @@ public class PlayerStatusControl : MonoBehaviour, IPointerClickHandler
     public PlayersManager PlayersManager;
 
     // Start is called before the first frame update
-    void Start()
+    protected virtual void Start()
     {
         PlayersManager.OnPlayerSelected += PlayersManager_OnPlayerSelected;
+        PlayersManager.OnAllPlayersSelected += PlayersManager_OnAllPlayersSelected;
+        IsSelected = false;
     }
 
-    private void PlayersManager_OnPlayerSelected(CareersGamePlayer player)
+    protected virtual void PlayersManager_OnAllPlayersSelected()
     {
-        if(Player == null && player == null)
-        {
-            IsSelected = !IsSelected
-        }
-        else
-        {
-            IsSelected = player.Number == Player.Number && !IsSelected;
-        }
+        IsSelected = false;
+    }
+
+    protected virtual void PlayersManager_OnPlayerSelected(CareersGamePlayer player)
+    {
+        IsSelected = player != null && player.Number == Player.Number && !IsSelected;
     }
 
     // Update is called once per frame
-    void Update()
+    protected virtual void Update()
     {
         PlayerIcon.color = PlayerColor;
 
@@ -45,7 +44,7 @@ public class PlayerStatusControl : MonoBehaviour, IPointerClickHandler
             SelectedIcon.GetComponent<Image>().color = Color.clear;
     }
 
-    public void OnPointerClick(PointerEventData eventData)
+    public virtual void OnPointerClick(PointerEventData eventData)
     {
         PlayersManager.SelectPlayer(Player);
     }

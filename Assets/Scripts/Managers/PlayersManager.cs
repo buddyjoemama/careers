@@ -14,6 +14,9 @@ public class PlayersManager : MonoBehaviour
     public delegate void PlayerSelected(CareersGamePlayer player);
     public event PlayerSelected OnPlayerSelected;
 
+    public delegate void AllPlayersSelected();
+    public event AllPlayersSelected OnAllPlayersSelected;
+
     public EventManager EventManager;
     public URLManager UrlManager;
 
@@ -63,6 +66,12 @@ public class PlayersManager : MonoBehaviour
     public void SelectPlayer(CareersGamePlayer player)
     {
         OnPlayerSelected(player);
+    }
+
+    public void SelectAllPlayers()
+    {
+        OnAllPlayersSelected();
+        OnPlayerSelected(null);
     }
 
     public CareersGamePlayer Me =>

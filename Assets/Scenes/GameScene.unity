@@ -6531,15 +6531,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 467578607}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0f2ab8c0b91b4cc489d1af24d7056b0, type: 3}
+  m_Script: {fileID: 11500000, guid: adbfdc2b543ee4219a69aeba8d899879, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NameControl: {fileID: 0}
   PlayerColor: {r: 0, g: 0, b: 0, a: 1}
   PlayerIcon: {fileID: 117141928}
   SelectedIcon: {fileID: 1108603276}
-  IsSelected: 1
-  SelectedColor: {r: 1, g: 1, b: 1, a: 1}
+  IsSelected: 0
+  SelectedColor: {r: 1, g: 0.57580614, b: 0, a: 1}
   PlayersManager: {fileID: 1109795931}
 --- !u!1 &471363010
 GameObject:
@@ -14930,7 +14929,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -18427,7 +18426,7 @@ Camera:
   far clip plane: 5000
   field of view: 60
   orthographic: 1
-  orthographic size: 1
+  orthographic size: 1.2
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -23535,7 +23534,7 @@ MonoBehaviour:
   m_UpdateMethod: 2
   m_Targets:
   - target: {fileID: 1644457366}
-    weight: 1
+    weight: 0
     radius: 0
   - target: {fileID: 769543340}
     weight: 0

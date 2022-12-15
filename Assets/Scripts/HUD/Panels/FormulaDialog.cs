@@ -18,7 +18,7 @@ public class FormulaDialog : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        PointsLabel.text = $"Must add up to: {GameManager.CurrentGame.CareersGameState.TotalPoints}";
+        //PointsLabel.text = $"Must add up to: {GameManager.CurrentGame.CareersGameState.TotalPoints}";
     }
 
 

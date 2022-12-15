@@ -2,6 +2,7 @@ using Cinemachine;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using System.Linq;
 
 public class GameViewManager : MonoBehaviour, IEventSystemHandler
 {
@@ -22,6 +23,17 @@ public class GameViewManager : MonoBehaviour, IEventSystemHandler
         PlayersManager.OnPlayerLoaded += PlayersManager_OnPlayerLoaded;
         PlayersManager.OnPlayerJoined += PlayersManager_OnPlayerJoined;
         PlayersManager.OnPlayerSelected += PlayersManager_OnPlayerSelected;
+        PlayersManager.OnAllPlayersSelected += PlayersManager_OnAllPlayersSelected;
+    }
+
+    private void PlayersManager_OnAllPlayersSelected()
+    {
+        foreach(var player in _playerMembers)
+        {
+            var member = CinemachineTargetGroup.FindMember(player.Value.transform);
+
+            CinemachineTargetGroup.m_Targets[member].weight = 1;
+        }
     }
 
     /// <summary>
