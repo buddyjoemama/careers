@@ -15,6 +15,7 @@ public class Player : MonoBehaviour, IPointerClickHandler
     public bool IsSelected = false;
     public SpriteRenderer SelectedSprite;
     public SpriteRenderer PlayerSprite;
+    public SpriteRenderer Background;
 
     public void SetPlayer(CareersGamePlayer player)
     {
@@ -47,6 +48,7 @@ public class Player : MonoBehaviour, IPointerClickHandler
     {
         PlayerSprite.color = Color;
         SelectedSprite.gameObject.SetActive(IsSelected);
+        Background.gameObject.SetActive(IsSelected);
 
         //// Find the squares we are on...could potentially be on > 1
         //var foundSquares = Physics2D.BoxCastAll(this.transform.position,

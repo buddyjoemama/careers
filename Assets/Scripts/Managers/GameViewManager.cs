@@ -28,11 +28,16 @@ public class GameViewManager : MonoBehaviour, IEventSystemHandler
 
     private void PlayersManager_OnAllPlayersSelected()
     {
-        foreach(var player in _playerMembers)
+        ResetCameraToWeight(1);
+    }
+
+    private void ResetCameraToWeight(int weight)
+    {
+        foreach (var player in _playerMembers)
         {
             var member = CinemachineTargetGroup.FindMember(player.Value.transform);
 
-            CinemachineTargetGroup.m_Targets[member].weight = 1;
+            CinemachineTargetGroup.m_Targets[member].weight = weight;
         }
     }
 
@@ -47,7 +52,7 @@ public class GameViewManager : MonoBehaviour, IEventSystemHandler
             var gameBoardPlayer = _playerMembers[player];
             var cameraMember = CinemachineTargetGroup.FindMember(gameBoardPlayer.transform);
 
-            CinemachineTargetGroup.m_Targets[_currentViewPlayer].weight = 0;
+            ResetCameraToWeight(0);
             CinemachineTargetGroup.m_Targets[cameraMember].weight = 6;
             _currentViewPlayer = cameraMember;
         }
