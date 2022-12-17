@@ -74,6 +74,7 @@
     <Compile Include="Assets\Scripts\HUD\UIComponents\PlayerStatusControl.cs" />
     <Compile Include="Assets\Scripts\Web\URLManager.cs" />
     <Compile Include="Assets\Scripts\Managers\GameViewManager.cs" />
+    <Compile Include="Assets\Scripts\HUD\UIComponents\AllPlayersControl.cs" />
     <Compile Include="Assets\Scripts\HUD\Panels\FormulaDialog.cs" />
     <Compile Include="Assets\Scripts\HUD\PlayerPreferences.cs" />
     <Compile Include="Assets\Scripts\Managers\GameManager.cs" />

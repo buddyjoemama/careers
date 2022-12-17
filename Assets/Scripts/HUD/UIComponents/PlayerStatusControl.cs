@@ -1,19 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 [ExecuteInEditMode]
-public class PlayerStatusControl : MonoBehaviour, IPointerClickHandler
+public class PlayerStatusControl : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
     public Color PlayerColor;
     public Image PlayerIcon;
     public Transform SelectedIcon;
+    public Transform NamePanel;
     public bool IsSelected;
     public Color SelectedColor;
     public CareersGamePlayer Player { get; set; }
     public PlayersManager PlayersManager;
+    public TMP_Text NameText;
 
     // Start is called before the first frame update
     protected virtual void Start()
@@ -21,6 +24,7 @@ public class PlayerStatusControl : MonoBehaviour, IPointerClickHandler
         PlayersManager.OnPlayerSelected += PlayersManager_OnPlayerSelected;
         PlayersManager.OnAllPlayersSelected += PlayersManager_OnAllPlayersSelected;
         IsSelected = false;
+        NameText.text = Player.Name;
     }
 
     protected virtual void PlayersManager_OnAllPlayersSelected()
@@ -47,5 +51,15 @@ public class PlayerStatusControl : MonoBehaviour, IPointerClickHandler
     public virtual void OnPointerClick(PointerEventData eventData)
     {
         PlayersManager.SelectPlayer(Player);
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        NamePanel.gameObject.SetActive(true);
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        NamePanel.gameObject.SetActive(false);
     }
 }
