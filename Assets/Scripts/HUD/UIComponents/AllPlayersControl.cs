@@ -6,12 +6,6 @@ using UnityEngine.EventSystems;
 [ExecuteInEditMode]
 public class AllPlayersControl : PlayerStatusControl
 {
-    // Start is called before the first frame update
-    protected override void Start()
-    {
-        base.Start();   
-    }
-
     public override void OnPointerClick(PointerEventData eventData)
     {
         //base.OnPointerClick(eventData);
@@ -21,5 +15,15 @@ public class AllPlayersControl : PlayerStatusControl
     protected override void PlayersManager_OnPlayerSelected(CareersGamePlayer player)
     {
         IsSelected = player == null;
+    }
+
+    public override void OnPointerEnter(PointerEventData eventData)
+    {
+        
+    }
+
+    public override void OnPointerExit(PointerEventData eventData)
+    {
+        
     }
 }

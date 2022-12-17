@@ -24,7 +24,6 @@ public class PlayerStatusControl : MonoBehaviour, IPointerClickHandler, IPointer
         PlayersManager.OnPlayerSelected += PlayersManager_OnPlayerSelected;
         PlayersManager.OnAllPlayersSelected += PlayersManager_OnAllPlayersSelected;
         IsSelected = false;
-        NameText.text = Player.Name;
     }
 
     protected virtual void PlayersManager_OnAllPlayersSelected()
@@ -53,12 +52,12 @@ public class PlayerStatusControl : MonoBehaviour, IPointerClickHandler, IPointer
         PlayersManager.SelectPlayer(Player);
     }
 
-    public void OnPointerEnter(PointerEventData eventData)
+    public virtual void OnPointerEnter(PointerEventData eventData)
     {
         NamePanel.gameObject.SetActive(true);
     }
 
-    public void OnPointerExit(PointerEventData eventData)
+    public virtual void OnPointerExit(PointerEventData eventData)
     {
         NamePanel.gameObject.SetActive(false);
     }

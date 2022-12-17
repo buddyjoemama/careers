@@ -31,7 +31,6 @@ public static class PlayerPreferences
     {
         get
         {
-            return "2dfefef2-57ca-4329-bdc0-1493619f9dc2";// PlayerPrefs.GetString("player_id");
             return PlayerPrefs.GetString("player_id");
         }
         set
