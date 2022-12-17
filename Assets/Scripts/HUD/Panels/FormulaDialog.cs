@@ -42,8 +42,8 @@ public class FormulaDialog : MonoBehaviour
     {
         UpdateTotal();
 
-        OkButton.interactable =
-            GameManager.CurrentGame.CareersGameState.TotalPoints == _total;
+        //OkButton.interactable =
+        //    GameManager.CurrentGame.CareersGameState.TotalPoints == _total;
     }
 
     private void UpdateTotal()

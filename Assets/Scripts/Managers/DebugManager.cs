@@ -32,6 +32,11 @@ public class DebugManager : MonoBehaviour
 
         PlayersManager.JoinPlayer(player);
     }
+
+    public void UpdatePlayerId(string id)
+    {
+        PlayerPreferences.PlayerId = id;
+    }
 }
 
 [CustomEditor(typeof(DebugManager))]
@@ -44,16 +49,16 @@ public class DebugManagerEditor : Editor
         DebugManager manager = (DebugManager)target;
 
         EditorGUILayout.LabelField("Name", PlayerPreferences.Name);
-        EditorGUILayout.TextField("Id", PlayerPreferences.PlayerId);
+        EditorGUILayout.LabelField("Id", PlayerPreferences.PlayerId);
 
         if (GUILayout.Button("Clear Preferences"))
         {
             manager.ClearPreferences();
         }    
 
-        if(GUILayout.Button("Create Default Player"))
+        if(GUILayout.Button("Set Player Id"))
         {
-
+            //manager.UpdatePlayerId(id);
         }
 
         if(GUILayout.Button("Player Join"))
