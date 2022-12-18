@@ -46,7 +46,7 @@ public class PlayerProfilePanel : MonoBehaviour
         StartCoroutine(CreateUserAsync());
     }
 
-    private IEnumerator CreateUserAsync()
+    public IEnumerator CreateUserAsync()
     {
         var player = new CareersGamePlayer
         {

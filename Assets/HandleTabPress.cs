@@ -16,7 +16,7 @@ public class HandleTabPress : MonoBehaviour
         _textFields = GetComponentsInChildren<TMP_InputField>().ToList();
         EventSystem.current.SetSelectedGameObject(_textFields[0].gameObject, null);
 
-        _textFields[0].OnPointerClick(null);
+        _textFields[0].OnPointerClick(new PointerEventData(EventSystem.current));
     }
 
     // Update is called once per frame
@@ -30,7 +30,7 @@ public class HandleTabPress : MonoBehaviour
             var input = _textFields[_index];
 
             EventSystem.current.SetSelectedGameObject(input.gameObject, null);
-            input.OnPointerClick(null);
+            input.OnPointerClick(new PointerEventData(EventSystem.current));
         }
     }
 }
