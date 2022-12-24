@@ -46,4 +46,9 @@ public class Hotspot : MonoBehaviour
     {
         return this.GetComponentInParent<Occupation>() != null;
     }
+
+    internal bool IsOccupiedBy(Player player)
+    {
+        return IsOccupied && Player == player;
+    }
 }

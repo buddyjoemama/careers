@@ -93,6 +93,11 @@ public class GameViewManager : MonoBehaviour, IEventSystemHandler
         return newPlayer;
     }
 
+    public Player GetPlayer(CareersGamePlayer player)
+    {
+        return _playerMembers[player];
+    }
+
     //public Slider slider;    
     //public Player Player;
     //public float ZoomOutBoardRadius;

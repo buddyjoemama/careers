@@ -87,4 +87,10 @@ public class Player : MonoBehaviour, IPointerClickHandler
     {
         PlayersManager.SelectPlayer(CareersGamePlayer);
     }
+
+    public override bool Equals(object other)
+    {
+        var player = (Player)other;
+        return player.CareersGamePlayer.Id == CareersGamePlayer.Id;
+    }
 }

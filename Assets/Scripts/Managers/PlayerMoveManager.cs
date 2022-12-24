@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
 using System.Linq;
+using System;
 
 public class PlayerMoveManager : MonoBehaviour
 {
+    public GameViewManager GameViewManager;
     private List<Hotspot> _hotspots;
 
     // Start is called before the first frame update
@@ -55,5 +57,42 @@ public class PlayerMoveManager : MonoBehaviour
 
         //if (index == _hotspots.Count - 1)
         //    index = 0;
+    }
+
+    internal void Move(CareersGamePlayer me)
+    {
+        var player = GameViewManager.GetPlayer(me);
+
+        if (isMoving)
+            return;
+
+        lock (this)
+        {
+            if (!isMoving)
+            {
+                isMoving = true;
+                StartCoroutine(MovePlayer(player));
+            }
+        }
+    }
+
+    private bool isMoving = false;
+
+    private IEnumerator MovePlayer(Player player)
+    {
+        var hotspot = _hotspots[++index];
+        var target = hotspot.transform.position;
+
+        index = index % (_hotspots.Count - 1);
+
+        while (!hotspot.IsOccupiedBy(player))
+        {
+            player.transform.position =
+                Vector2.MoveTowards(player.transform.position, target, Time.deltaTime);
+
+            yield return new WaitForEndOfFrame();
+        }
+
+        isMoving = false;
     }
 }

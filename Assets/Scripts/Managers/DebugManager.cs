@@ -9,6 +9,7 @@ public class DebugManager : MonoBehaviour
 {
     public PlayersManager PlayersManager;
     public URLManager URLManager;
+    public PlayerMoveManager PlayerMoveManager;
 
     // Start is called before the first frame update
     void Start()
@@ -46,13 +47,18 @@ public class DebugManager : MonoBehaviour
         StartCoroutine(CreatePlayerInternal());
     }
 
+    public void Move()
+    {
+        PlayerMoveManager.Move(PlayersManager.Me);
+    }
+
     private IEnumerator CreatePlayerInternal()
     {
         var player = new CareersGamePlayer
         {
             Email = "testuser@test.com",//"Email.text,
             Initials = "tu",
-            Name = "test user"
+            Name = "brian"
         };
 
         string json = JsonConvert.SerializeObject(player);
@@ -109,6 +115,11 @@ public class DebugManagerEditor : Editor
         if(GUILayout.Button("Player Join"))
         {
             manager.JoinPlayer();
+        }
+
+        if(GUILayout.Button("Move 1 square"))
+        {
+            manager.Move();
         }
     }
 }
