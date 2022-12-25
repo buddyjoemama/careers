@@ -18,6 +18,7 @@ public class GameSquareCameraGroupAdjuster : MonoBehaviour
 
     public Transform Target;
     public float TargetWeight;
+    public float Radius;
 
     private float _oldWeight;
 
