@@ -39,6 +39,7 @@ public class GameSquareCameraGroupAdjuster : MonoBehaviour
         {
             _oldWeight = TargetGroup.m_Targets[TargetGroup.FindMember(Target)].weight;
             TargetGroup.m_Targets[TargetGroup.FindMember(Target)].weight = TargetWeight;
+            TargetGroup.m_Targets[TargetGroup.FindMember(Target)].radius = Radius;
         }
     }
 
